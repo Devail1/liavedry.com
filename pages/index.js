@@ -15,10 +15,11 @@ export default function Home() {
         <h1 className={styles.title}>
           Hello, I&apos;m Liav Edry
         </h1>
-        <h2 className={styles.subtitle}>
-          Web Developer
-        </h2>
-        <code className={styles.tagline}>Software Engineer &amp;&amp; Next.js || JavaScript</code>
+        <code className={styles.tagline}>Web Developer &amp;&amp; Next.js || JavaScript</code>
+        <div className={styles.iconsSocials}>
+          <a target="_blank" title="GitHub Profile" href="https://github.com/Devail1"><i className="fab fa-github"></i></a>
+          <a target="_blank" title="LinkedIn Profile" href="https://www.linkedin.com/in/liav-edry/"><i className="fab fa-linkedin"></i></a>
+        </div>
       </main>
     </div>
   )
