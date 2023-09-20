@@ -13,8 +13,8 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Hello, I'm Liav Edry
-        </h1 >
+          Hello, I&apos;m Liav Edry
+        </h1>
         <h2 className={styles.subtitle}>
           A Web Developer
         </h2>
