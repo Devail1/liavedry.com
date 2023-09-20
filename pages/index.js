@@ -16,9 +16,9 @@ export default function Home() {
           Hello, I&apos;m Liav Edry
         </h1>
         <h2 className={styles.subtitle}>
-          A Web Developer
+          Web Developer
         </h2>
-        <code className={styles.tagline}>Software Engineer &amp;&amp; Next.js || Docker || JavaScript</code>
+        <code className={styles.tagline}>Software Engineer &amp;&amp; Next.js || JavaScript</code>
       </main>
     </div>
   )
