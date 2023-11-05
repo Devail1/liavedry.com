@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className={styles.title}>
           Hello, I&apos;m Liav Edry
         </h1>
-        <code className={styles.tagline}>Web Developer &amp;&amp; Next.js || JavaScript</code>
+        <code className={styles.tagline}>Web Developer &amp;&amp; Next.js || TypeScript</code>
         <div className={styles.iconsSocials}>
           <a target="_blank" title="GitHub Profile" rel="noreferrer" href="https://github.com/Devail1"><i className="fab fa-github"></i></a>
           <a target="_blank" title="LinkedIn Profile" rel="noreferrer" href="https://www.linkedin.com/in/liav-edry/"><i className="fab fa-linkedin"></i></a>
