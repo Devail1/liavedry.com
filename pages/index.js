@@ -35,7 +35,7 @@ export default function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Hello, I&apos;m Liav Edry</h1>
         <code className={styles.tagline}>
-          Web Developer &amp;&amp; Next.js || TypeScript
+          Web Developer &amp;&amp; MERN || Next.js 14 || TypeScript
         </code>
         <div className={styles.iconsSocials}>
           <a
