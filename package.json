@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node index.ts",
-    "server": "nodemon index.ts",
+    "start": "ts-node ./server/index.ts",
+    "server": "nodemon ./server/index.ts",
     "client": "cd client && pnpm run dev",
     "dev": "concurrently \"pnpm run server\" \"pnpm client\""
   },
