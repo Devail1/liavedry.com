@@ -1,3 +1,7 @@
 export default function Home() {
-  return <h1 className="text-2xl font-bold underline">Hello world!</h1>;
+  return (
+    <div className="flex  items-center justify-center min-h-screen ">
+      <button className="btn btn-primary">Hello daisy</button>
+    </div>
+  );
 }
