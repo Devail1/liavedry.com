@@ -5,13 +5,6 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "liavedry.com",
-        port: "",
-      },
-    ],
     formats: ["image/webp"],
   },
   async rewrites() {
