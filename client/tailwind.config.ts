@@ -4,8 +4,14 @@ export default {
     extend: {
       keyframes: {
         expand: {
-          "0%": { transform: "translateX(0%) scaleX(0%)", opacity: "0" },
-          "100%": { transform: "translateX(0%) scaleX(100%)", opacity: "1" },
+          "0%": {
+            transform: "translateX(0%) scaleX(0%)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateX(0%) scaleX(100%)",
+            opacity: "1",
+          },
         },
       },
       animation: {
@@ -13,12 +19,17 @@ export default {
       },
     },
   },
-  plugins: [require("daisyui"), require("@tailwindcss/typography"), "prettier-plugin-tailwindcss"],
+  plugins: [
+    require("daisyui"),
+    require("@tailwindcss/typography"),
+    "prettier-plugin-tailwindcss",
+  ],
   daisyui: {
     themes: [
       {
         light: {
           ...require("daisyui/src/theming/themes").light,
+          primary: "#2563eb",
           ".btn-md": {
             height: "2rem",
             minHeight: "2rem",

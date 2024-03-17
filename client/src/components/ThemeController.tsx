@@ -5,7 +5,12 @@ function ThemeController() {
     <button type="button" className="btn btn-ghost btn-md btn-circle ">
       <label className="swap swap-rotate" htmlFor="theme-controller">
         {/* this hidden checkbox controls the state */}
-        <input type="checkbox" className="theme-controller" value="synthwave" id="theme-controller" />
+        <input
+          type="checkbox"
+          className="theme-controller"
+          value="synthwave"
+          id="theme-controller"
+        />
 
         {/* sun icon */}
         <svg

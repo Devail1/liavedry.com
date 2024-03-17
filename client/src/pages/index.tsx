@@ -6,9 +6,14 @@ export default function Home() {
     <div className="flex flex-col gap-4 ">
       <div className="flex flex-col space-y-2 w-full md:items-center md:gap-x-8 md:flex-row">
         <div className="relative w-24 h-24 shrink-0">
-          <Image className="rounded-full object-cover" src="/profile.webp" alt="profile" fill />
+          <Image
+            className="rounded-full object-cover"
+            src="/profile.webp"
+            alt="profile"
+            fill
+          />
         </div>
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col grow max-w-xl">
           <h1 className="text-2xl font-medium">Hey, I&lsquo;m Liav 👋</h1>
           <h2 className="text-base font-normal">
             Lifelong learner, building modern web experiences.
@@ -16,7 +21,7 @@ export default function Home() {
 
           <button
             type="button"
-            className="btn btn-md mt-4 btn-primary btn-block rounded-2xl text-white"
+            className="btn  btn-md mt-4 btn-primary btn-block  rounded-2xl text-white"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +43,7 @@ export default function Home() {
         </div>
       </div>
 
-      <Link href="/api/hello" className="link mx-auto mt-2">
+      <Link href="/api/hello" className="link mt-2">
         Testing Backend
       </Link>
     </div>

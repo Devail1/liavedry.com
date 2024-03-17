@@ -7,10 +7,14 @@ type EventType = "mousedown" | "mouseup" | "touchstart" | "touchend";
 type TUseOnClickOutside = <T extends HTMLElement = HTMLElement>(
   ref: RefObject<T> | RefObject<T>[],
   handler: (event: MouseEvent | TouchEvent) => void,
-  eventType?: EventType
+  eventType?: EventType,
 ) => void;
 
-const useOnClickOutside: TUseOnClickOutside = (ref, handler, eventType = "mousedown") => {
+const useOnClickOutside: TUseOnClickOutside = (
+  ref,
+  handler,
+  eventType = "mousedown",
+) => {
   useEventListener(eventType, (event) => {
     const target = event.target as Node;
 

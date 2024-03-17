@@ -7,7 +7,7 @@ function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <div className="max-w-5xl mx-auto w-full">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 pb-0">
         <div className="navbar-start ">
           <Dropdown />
         </div>
@@ -15,7 +15,7 @@ function Navbar() {
           <div className="form-control hidden md:flex">
             <label
               htmlFor="desktopSearch"
-              className="input input-bordered !outline-none flex items-center gap-2"
+              className="input input-bordered input-md !outline-none flex items-center gap-2"
             >
               <input type="text" placeholder="Search" id="desktopSearch" />
               <svg
