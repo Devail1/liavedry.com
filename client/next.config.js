@@ -13,6 +13,7 @@ const nextConfig = {
       },
     ],
   },
+  formats: ["image/webp"],
   async rewrites() {
     return [
       {
