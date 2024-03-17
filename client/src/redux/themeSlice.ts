@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "./store";
+import type { RootState } from "@/redux/store";
 
 type Theme = "light" | "dark";
 

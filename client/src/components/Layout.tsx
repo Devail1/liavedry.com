@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
+import { useSelector } from "react-redux";
+import { selectTheme } from "@/redux/themeSlice";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import { selectTheme } from "@/redux/themeSlice";
-import { useSelector } from "react-redux";
 
 function Layout({ children }: { children: ReactNode }) {
   const currentTheme = useSelector(selectTheme);

@@ -1,9 +1,10 @@
-import { Provider } from "react-redux";
 import React from "react";
+import { Provider } from "react-redux";
+import { AppProps } from "next/app";
 import { store } from "@/redux/store";
 import Layout from "./Layout";
 
-const AppContainer = ({ Component, pageProps }) => {
+function AppContainer({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <Layout>
@@ -11,6 +12,6 @@ const AppContainer = ({ Component, pageProps }) => {
       </Layout>
     </Provider>
   );
-};
+}
 
 export default AppContainer;

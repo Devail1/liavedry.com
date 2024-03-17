@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 function ThemeController() {
   const currentTheme = useSelector(selectTheme);
+
   const dispatch = useDispatch();
 
   const handleThemeToggle = () => {
