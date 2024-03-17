@@ -4,6 +4,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ["liavedry.com"],
+  },
   async rewrites() {
     return [
       {
