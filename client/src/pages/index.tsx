@@ -6,7 +6,7 @@ export default function Home() {
     <div className="flex flex-col gap-4 ">
       <div className="flex flex-col space-y-2 w-full md:items-center md:gap-x-8 md:flex-row">
         <div className="relative w-24 h-24 shrink-0">
-          <Image className="rounded-full object-cover" src="/profile-img.jpeg" alt="profile" fill />
+          <Image className="rounded-full object-cover" src="/profile.jpeg" alt="profile" fill />
         </div>
         <div className="flex flex-col grow max-w-xl">
           <h1 className="text-2xl font-medium">Hey, I&lsquo;m Liav 👋</h1>
