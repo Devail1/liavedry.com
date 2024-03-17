@@ -19,11 +19,7 @@ export default {
       },
     },
   },
-  plugins: [
-    require("daisyui"),
-    require("@tailwindcss/typography"),
-    "prettier-plugin-tailwindcss",
-  ],
+  plugins: [require("daisyui"), require("@tailwindcss/typography"), "prettier-plugin-tailwindcss"],
   daisyui: {
     themes: [
       {

@@ -19,7 +19,7 @@ function Dropdown() {
         <li>
           <Link href="/">Home</Link>
         </li>
-        <li>
+        {/* <li>
           <details ref={menuRef}>
             <summary>About</summary>
             <ul className="p-2 z-10 bg-base-100 rounded-t-none">
@@ -31,7 +31,7 @@ function Dropdown() {
               </li>
             </ul>
           </details>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

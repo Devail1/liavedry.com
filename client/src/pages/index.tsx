@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export default function Home() {
   return (
@@ -9,9 +8,10 @@ export default function Home() {
           <Image className="rounded-full object-cover" src="/profile.jpeg" alt="profile" fill />
         </div>
         <div className="flex flex-col grow max-w-xl">
-          <h1 className="text-2xl font-medium">Hey, I&lsquo;m Liav 👋</h1>
+          <h1 className="text-2xl font-medium ">Hey, I&apos;m Liav 👋</h1>
           <h2 className="text-base font-normal">
-            Lifelong learner, building modern web experiences.
+            Lifelong learner with a passion for building beautiful and functional web experiences
+            using TypeScript, React, and Node.js
           </h2>
 
           <button
@@ -33,14 +33,14 @@ export default function Home() {
               <rect width="20" height="16" x="2" y="4" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
-            Contact me
+            Get in touch
           </button>
         </div>
       </div>
 
-      <Link href="/api/hello" className="link mt-2">
+      {/* <Link href="/api/hello" className="link mt-2">
         Testing Backend
-      </Link>
+      </Link> */}
     </div>
   );
 }

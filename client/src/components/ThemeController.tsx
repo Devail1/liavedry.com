@@ -1,6 +1,17 @@
+import { selectTheme, toggleTheme } from "@/redux/themeSlice";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 function ThemeController() {
+  const currentTheme = useSelector(selectTheme);
+  const dispatch = useDispatch();
+
+  const handleThemeToggle = () => {
+    dispatch(toggleTheme());
+  };
+
+  const isDarkTheme = currentTheme === "dark";
+
   return (
     <button type="button" className="btn btn-ghost btn-md btn-circle ">
       <label className="swap swap-rotate" htmlFor="theme-controller">
@@ -10,6 +21,8 @@ function ThemeController() {
           className="theme-controller"
           value="synthwave"
           id="theme-controller"
+          onChange={handleThemeToggle}
+          checked={isDarkTheme}
         />
 
         {/* sun icon */}
