@@ -23,8 +23,12 @@ function Dropdown() {
           <details ref={menuRef}>
             <summary>About</summary>
             <ul className="p-2 z-10 bg-base-100 rounded-t-none">
-              <Link href="/">Blog</Link>
-              <Link href="/">Projects</Link>
+              <li>
+                <Link href="/">Blog</Link>
+              </li>
+              <li>
+                <Link href="/">Projects</Link>
+              </li>
             </ul>
           </details>
         </li>
