@@ -7,10 +7,18 @@
     }
   },
   "rules": {
+    "global-require": "off",
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
     "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
     "jsx-a11y/control-has-associated-label": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }]
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/label-has-for": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }]
   },
-  "extends": ["next/core-web-vitals", "eslint-config-airbnb", "prettier"]
+  "extends": ["next/core-web-vitals", "airbnb", "airbnb-typescript", "prettier"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
 }

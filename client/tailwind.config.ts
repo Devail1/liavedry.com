@@ -1,10 +1,47 @@
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        expand: {
+          "0%": { transform: "translateX(0%) scaleX(0%)", opacity: "0" },
+          "100%": { transform: "translateX(0%) scaleX(100%)", opacity: "1" },
+        },
+      },
+      animation: {
+        expand: "expand 0.3s ease-in-out",
+      },
+    },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require("@tailwindcss/typography"), "prettier-plugin-tailwindcss"],
   daisyui: {
-    themes: ["dark", "light"],
+    themes: [
+      {
+        light: {
+          ...require("daisyui/src/theming/themes").light,
+          ".btn-md": {
+            height: "2rem",
+            minHeight: "2rem",
+          },
+          ".btn-circle": {
+            height: "2.5rem",
+            width: "2.5rem",
+          },
+        },
+      },
+      {
+        dark: {
+          ...require("daisyui/src/theming/themes").dark,
+          ".btn-md": {
+            height: "2rem",
+            minHeight: "2rem",
+          },
+          ".btn-circle": {
+            height: "2.5rem",
+            width: "2.5rem",
+          },
+        },
+      },
+    ],
   },
 };
