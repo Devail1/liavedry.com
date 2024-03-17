@@ -9,8 +9,10 @@ function Layout({ children }: { children: ReactNode }) {
 
   return (
     <div data-theme={currentTheme} className="flex flex-col min-h-screen">
-      <Navbar />
-      <main className="container max-w-5xl px-10 mx-auto  grow">{children}</main>
+      <div className="container max-w-3xl grow mx-auto">
+        <Navbar />
+        <main className="px-6 md:px-4 pt-2 pb-4 grow">{children}</main>
+      </div>
       <Footer />
     </div>
   );

@@ -6,7 +6,7 @@ import SearchInput from "./SearchInput";
 function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
-    <div className="max-w-5xl mx-auto w-full">
+    <div className="w-full">
       <div className="navbar bg-base-100 pb-0">
         <div className="navbar-start ">
           <Dropdown />
@@ -38,7 +38,7 @@ function Navbar() {
           <ThemeController />
         </div>
       </div>
-      <div className="divider px-4 mt-0" />
+      <div className="divider px-4 my-0" />
     </div>
   );
 }

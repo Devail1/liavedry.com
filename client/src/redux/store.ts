@@ -5,7 +5,7 @@ export const store = configureStore({
   reducer: {
     theme: themeSlice.reducer,
   },
-  devTools: true,
+  devTools: process.env.NODE_ENV !== "production" ? true : false,
 });
 
 // Infer the type of the store state
