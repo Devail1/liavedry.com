@@ -3,5 +3,5 @@ import AppContainer from "@/components/AppContainer";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <AppContainer Component={Component} pageProps={pageProps} />;
+  return <AppContainer Component={Component} {...pageProps} />;
 }

@@ -21,4 +21,4 @@ export const { toggleTheme } = themeSlice.actions;
 
 export const selectTheme = (state: RootState) => state.theme.value;
 
-export default themeSlice.reducer;
+export default themeSlice;
