@@ -26,6 +26,9 @@ export default {
         light: {
           ...require("daisyui/src/theming/themes").light,
           primary: "#2563eb",
+          ".text-content": {
+            color: "#141414",
+          },
           ".btn-md": {
             height: "2rem",
             minHeight: "2rem",
@@ -39,6 +42,9 @@ export default {
       {
         dark: {
           ...require("daisyui/src/theming/themes").dark,
+          ".text-content": {
+            color: "#f5f5f5",
+          },
           ".btn-md": {
             height: "2rem",
             minHeight: "2rem",
