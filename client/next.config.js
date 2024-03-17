@@ -12,8 +12,8 @@ const nextConfig = {
         port: "",
       },
     ],
+    formats: ["image/webp"],
   },
-  formats: ["image/webp"],
   async rewrites() {
     return [
       {
