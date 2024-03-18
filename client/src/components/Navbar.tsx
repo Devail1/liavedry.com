@@ -1,15 +1,22 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import ThemeController from "./ThemeController";
-import Dropdown from "./Dropdown";
 import SearchInput from "./SearchInput";
 
 function Navbar() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
-    <div className="w-full">
-      <div className="navbar bg-base-100 pb-0">
+    <div className="w-full mt-2">
+      <div className="navbar bg-base-100 ">
         <div className="navbar-start ">
-          <Dropdown />
+          <div className="flex-none">
+            <ul className="menu menu-horizontal px-1 gap-2">
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+            </ul>
+          </div>
+          {/* <Dropdown /> */}
         </div>
         <div className="navbar-center ">
           <div className="form-control hidden md:flex">
