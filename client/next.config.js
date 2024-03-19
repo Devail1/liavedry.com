@@ -9,7 +9,6 @@ const withMDX = require("@next/mdx")({
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  transpilePackages: ["@mdxeditor/editor"],
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   images: {
     formats: ["image/webp"],
@@ -21,16 +20,14 @@ const nextConfig = {
     ],
   },
   async rewrites() {
-    if (process.env.NODE_ENV !== "production") {
-      return [
-        {
-          source: "/api/:path*",
-          destination: `${process.env.NEXT_PUBLIC_API}/api/:path*`,
-        },
-      ];
-    }
-    return [];
-  },
+    return [
+      {
+        source: "/api/:path*",
+        destination: `${process.env.NEXT_PUBLIC_API}/api/:path*`,
+      },
+    ];
+  }
+},
 };
 
 module.exports = withMDX(nextConfig);
