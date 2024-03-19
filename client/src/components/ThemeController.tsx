@@ -1,4 +1,4 @@
-import { selectTheme, toggleTheme } from "@/redux/themeSlice";
+import { selectTheme, toggleTheme } from "@/redux/features/themeSlice";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 

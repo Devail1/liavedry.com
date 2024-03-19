@@ -10,7 +10,14 @@ export default function Home() {
       <div className="flex flex-col gap-4 ">
         <div className="flex flex-col space-y-2 w-full md:items-center md:gap-x-8 md:flex-row">
           <div className="relative w-24 h-24 shrink-0">
-            <Image className="rounded-full object-cover" src="/profile.jpeg" alt="profile" fill />
+            <Image
+              className="rounded-full object-cover"
+              src="/profile.jpeg"
+              alt="profile"
+              priority
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
           </div>
           <div className="flex flex-col grow max-w-lg">
             <h1 className="text-2xl leading-10 font-medium text-content">Hey, I&apos;m Liav 👋</h1>

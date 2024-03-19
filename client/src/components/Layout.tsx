@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { useSelector } from "react-redux";
-import { selectTheme } from "@/redux/themeSlice";
+import { selectTheme } from "@/redux/features/themeSlice";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 

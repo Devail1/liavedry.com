@@ -9,9 +9,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <h2 className="!text-xl md:!text-2xl font-semibold !mt-6 !mb-8">{children}</h2>
     ),
     img: (props) => (
-      <div className="relative w-full aspect-[16/9]">
-        <Image objectFit="cover" fill {...(props as ImageProps)} />
-      </div>
+      <span className="relative block w-full aspect-[16/9]">
+        <Image
+          priority
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          {...(props as ImageProps)}
+        />
+      </span>
     ),
     ...components,
   };

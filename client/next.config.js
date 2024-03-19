@@ -1,12 +1,15 @@
 // @ts-check
 
-const withMDX = require("@next/mdx")();
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+});
 
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  transpilePackages: ["@mdxeditor/editor"],
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
   images: {
     formats: ["image/webp"],
