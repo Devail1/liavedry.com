@@ -21,12 +21,15 @@ const nextConfig = {
     ],
   },
   async rewrites() {
-    return [
-      {
-        source: "/api/:path*",
-        destination: `${process.env.NEXT_PUBLIC_API}/api/:path*`,
-      },
-    ];
+    if (process.env.NODE_ENV !== "production") {
+      return [
+        {
+          source: "/api/:path*",
+          destination: `${process.env.NEXT_PUBLIC_API}/api/:path*`,
+        },
+      ];
+    }
+    return [];
   },
 };
 
