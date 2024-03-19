@@ -1,12 +1,14 @@
 import "dotenv/config";
-import express from "express";
+import express, { Request } from "express";
 
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
 
-app.get("/api/hello", (req, res) => {
+app.use(express.static("client/out"));
+
+app.get("/api/hello", (req: Request, res) => {
   res.json({ name: "Hello World!" });
 });
 
