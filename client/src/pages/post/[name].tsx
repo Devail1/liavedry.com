@@ -25,9 +25,17 @@ export const getStaticProps = wrapper.getStaticProps(
   (store) =>
     async ({ params }: { params: { name: string } }) => {
       const name = params?.name;
-      const { data } = await store.dispatch(getPostBySlug.initiate(name));
+      let res;
+      try {
+        res = await store.dispatch(getPostBySlug.initiate(name));
+      } catch (error) {
+        return {
+          notFound: true,
+        };
+      }
+
       await Promise.all(store.dispatch(getRunningQueriesThunk()));
-      const mdxSource = await serialize(data.content);
+      const mdxSource = await serialize(res?.data?.content);
 
       return {
         props: { source: mdxSource },
