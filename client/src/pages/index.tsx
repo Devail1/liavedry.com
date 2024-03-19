@@ -1,6 +1,6 @@
-import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
         </div>
 
-        <Link href="/api/hello" className="link mt-2">
+        <Link href="/api/v1/emojis" className="link mt-2">
           Testing Backend
         </Link>
       </div>
