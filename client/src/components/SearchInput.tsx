@@ -1,6 +1,6 @@
-import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 import clsx from "clsx";
 import React, { useRef } from "react";
+import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 
 function SearchInput({ isOpen, setIsOpen }) {
   const searchRef = useRef(null);

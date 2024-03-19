@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 
 connectDB();
 
-app.use(cors({ origin: process.env.DOMAIN_URL }));
+// app.use(cors({ origin: process.env.DOMAIN_URL }));
 app.use(express.json());
 
 app.use("/posts", postsRoutes);
