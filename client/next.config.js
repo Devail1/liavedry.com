@@ -7,7 +7,6 @@ const nextConfig = {
   images: {
     formats: ["image/webp"],
   },
-  output: 'export',
   async rewrites() {
     return [
       {
