@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -15,8 +16,8 @@ export default function Home() {
           <div className="flex flex-col grow max-w-lg">
             <h1 className="text-2xl font-medium text-content">Hey, I&apos;m Liav 👋</h1>
             <h2 className="text-base font-normal">
-              Lifelong learner with a passion for building beautiful and functional web experiences
-              using TypeScript, React, and Node.js
+              Lifelong learner with a passion for building beautiful and functional web experiences using
+              TypeScript, React, and Node.js
             </h2>
 
             <a
@@ -43,9 +44,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <Link href="/api/hello" className="link mt-2">
-        Testing Backend
-      </Link> */}
+        <Link href="/api/hello" className="link mt-2">
+          Testing Backend
+        </Link>
       </div>
     </div>
   );
