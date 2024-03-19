@@ -7,7 +7,6 @@
     }
   },
   "rules": {
-    "semi": "off",
     "global-require": "off",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
@@ -22,6 +21,6 @@
   },
   "extends": ["next/core-web-vitals", "airbnb", "airbnb-typescript", "prettier"],
   "parserOptions": {
-    "project": ["tsconfig.json"]
+    "project": "./tsconfig.json"
   }
 }

@@ -13,15 +13,10 @@ export default function Post({ source }: { source: MDXRemoteSerializeResult }) {
 
 export async function getStaticPaths() {
   const store = makeStore();
-  let res;
-  try {
-    res = await store.dispatch(getAllPosts.initiate(""));
-  } catch (error) {
-    console.log("error in getStaticPaths", error);
-  }
+  const result = await store.dispatch(getAllPosts.initiate(""));
 
   return {
-    paths: res?.data?.map((p) => `/post/${p.title}`) || [],
+    paths: result.data?.map((p) => `/post/${p.title}`) || [],
     fallback: true,
   };
 }
@@ -29,20 +24,10 @@ export async function getStaticPaths() {
 export const getStaticProps = wrapper.getStaticProps(
   (store) =>
     async ({ params }: { params: { name: string } }) => {
-      let res;
       const name = params?.name;
-
-      try {
-        res = await store.dispatch(getPostBySlug.initiate(name));
-      } catch (error) {
-        console.log("error in getStaticProps", error);
-      }
-      try {
-        await Promise.all(store.dispatch(getRunningQueriesThunk()));
-      } catch (error) {
-        console.log("error in getStaticProps with getRunningQueriesThunk", error);
-      }
-      const mdxSource = await serialize(res?.data?.content);
+      const { data } = await store.dispatch(getPostBySlug.initiate(name));
+      await Promise.all(store.dispatch(getRunningQueriesThunk()));
+      const mdxSource = await serialize(data.content);
 
       return {
         props: { source: mdxSource },

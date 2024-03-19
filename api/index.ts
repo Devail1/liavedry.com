@@ -9,13 +9,10 @@ const port = process.env.PORT || 3000;
 
 connectDB();
 
-if (process.env.NODE_ENV !== "production") {
-  app.use(cors({ origin: process.env.DOMAIN_URL }));
-}
-
+app.use(cors({ origin: process.env.DOMAIN_URL }));
 app.use(express.json());
 
-app.use("/api/posts", postsRoutes);
+app.use("/posts", postsRoutes);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
