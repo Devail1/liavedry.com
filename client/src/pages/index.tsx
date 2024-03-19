@@ -13,14 +13,15 @@ export default function Home() {
             <Image className="rounded-full object-cover" src="/profile.jpeg" alt="profile" fill />
           </div>
           <div className="flex flex-col grow max-w-lg">
-            <h1 className="text-2xl leading-10 font-medium text-content">Hey, I&apos;m Liav 👋</h1>
-            <h2 className="text-lg leading-6 font-normal">
-              Lifelong learner, building digital experiences.
+            <h1 className="text-2xl font-medium text-content">Hey, I&apos;m Liav 👋</h1>
+            <h2 className="text-base font-normal">
+              Lifelong learner with a passion for building beautiful and functional web experiences
+              using TypeScript, React, and Node.js
             </h2>
 
             <a
               href="http://mailto:liavedry@gmail.com"
-              className="btn btn-md mt-4 btn-primary btn-block rounded-2xl text-white"
+              className="btn btn-md mt-4 btn-primary btn-block  rounded-2xl text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

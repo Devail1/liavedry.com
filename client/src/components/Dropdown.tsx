@@ -14,19 +14,26 @@ function Dropdown() {
   useOnClickOutside(menuRef, handleClickOutsideMenu);
 
   return (
-    <li>
-      <details ref={menuRef}>
-        <summary>About</summary>
-        <ul className="p-2 z-10 bg-base-100 rounded-t-none">
-          <li>
-            <Link href="/">Blog</Link>
-          </li>
-          <li>
-            <Link href="/">Projects</Link>
-          </li>
-        </ul>
-      </details>
-    </li>
+    <div className="flex-none">
+      <ul className="menu menu-horizontal px-1 gap-2">
+        <li>
+          <Link href="/">Home</Link>
+        </li>
+        {/* <li>
+          <details ref={menuRef}>
+            <summary>About</summary>
+            <ul className="p-2 z-10 bg-base-100 rounded-t-none">
+              <li>
+                <Link href="/">Blog</Link>
+              </li>
+              <li>
+                <Link href="/">Projects</Link>
+              </li>
+            </ul>
+          </details>
+        </li> */}
+      </ul>
+    </div>
   );
 }
 
