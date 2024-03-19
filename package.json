@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "tsc": "tsc --noEmit",
+    "lint": "tsc --noEmit",
     "start": "ts-node api/index.ts",
     "server": "nodemon api/index.ts",
     "client": "cd client && pnpm run dev",
@@ -14,16 +14,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@reduxjs/toolkit": "^2.2.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
-    "mongoose": "^8.2.2",
-    "react-redux": "^9.1.0"
+    "mongoose": "^8.2.2"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
+    "@types/express-serve-static-core": "^4.17.43",
     "@types/node": "^20.11.27",
     "concurrently": "^8.2.2",
     "nodemon": "^3.1.0",
