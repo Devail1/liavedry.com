@@ -1,6 +1,6 @@
-import useOnClickOutside from "@/hooks/useOnClickOutside";
-import Link from "next/link";
 import React, { useRef } from "react";
+import Link from "next/link";
+import { useOnClickOutside } from "@/hooks/useOnClickOutside";
 
 function Dropdown() {
   const menuRef = useRef(null);

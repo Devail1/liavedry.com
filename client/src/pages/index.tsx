@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,9 +22,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col grow max-w-lg">
             <h1 className="text-2xl leading-10 font-medium text-content">Hey, I&apos;m Liav 👋</h1>
-            <h2 className="text-lg leading-6 font-normal">
-              Lifelong learner, building digital experiences.
-            </h2>
+            <h2 className="text-lg leading-6 font-normal">Lifelong learner, building digital experiences.</h2>
 
             <a
               href="http://mailto:liavedry@gmail.com"
@@ -49,9 +48,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <Link href="/api/hello" className="link mt-2">
-        Testing Backend
-      </Link> */}
+        <Link href="/api/hello" className="link mt-2">
+          Testing Backend
+        </Link>
       </div>
     </div>
   );

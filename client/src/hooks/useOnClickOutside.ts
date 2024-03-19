@@ -1,20 +1,14 @@
-// inspired by: https://usehooks-ts.com/react-hook/use-on-click-outside
 import type { RefObject } from "react";
-import useEventListener from "./useEventListener";
+import { useEventListener } from "./useEventListener";
 
 type EventType = "mousedown" | "mouseup" | "touchstart" | "touchend";
 
-type TUseOnClickOutside = <T extends HTMLElement = HTMLElement>(
+// eslint-disable-next-line import/prefer-default-export
+export function useOnClickOutside<T extends HTMLElement = HTMLElement>(
   ref: RefObject<T> | RefObject<T>[],
   handler: (event: MouseEvent | TouchEvent) => void,
-  eventType?: EventType,
-) => void;
-
-const useOnClickOutside: TUseOnClickOutside = (
-  ref,
-  handler,
-  eventType = "mousedown",
-) => {
+  eventType: EventType = "mousedown"
+): void {
   useEventListener(eventType, (event) => {
     const target = event.target as Node;
 
@@ -31,6 +25,4 @@ const useOnClickOutside: TUseOnClickOutside = (
       handler(event);
     }
   });
-};
-
-export default useOnClickOutside;
+}
