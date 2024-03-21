@@ -22,7 +22,9 @@ export default function Home() {
           </div>
           <div className="flex flex-col grow max-w-lg">
             <h1 className="text-2xl leading-10 font-medium text-content">Hey, I&apos;m Liav 👋</h1>
-            <h2 className="text-lg leading-6 font-normal">Lifelong learner, building digital experiences.</h2>
+            <h2 className="text-lg leading-6 font-normal">
+              Lifelong learner, building digital experiences.
+            </h2>
 
             <a
               href="http://mailto:liavedry@gmail.com"
