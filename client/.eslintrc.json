@@ -27,6 +27,6 @@
   },
   "extends": ["next/core-web-vitals", "airbnb", "airbnb-typescript", "prettier"],
   "parserOptions": {
-    "project": ["./tsconfig.json", "./client/tsconfig.json"]
+    "project": ["./tsconfig.json"]
   }
 }

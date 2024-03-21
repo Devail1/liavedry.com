@@ -5,11 +5,14 @@ import cors from "cors";
 
 import * as middlewares from "./middlewares";
 import api from "./api";
+import connectDB from "./db";
 import MessageResponse from "./interfaces/MessageResponse";
 
 require("dotenv").config();
 
 const app = express();
+
+connectDB();
 
 app.use(morgan("dev"));
 app.use(helmet());
@@ -22,7 +25,7 @@ app.get<{}, MessageResponse>("/api/hello", (req, res) => {
   });
 });
 
-app.use("/api/v1", api);
+app.use("/api", api);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);

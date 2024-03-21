@@ -26,7 +26,7 @@ const nextConfig = {
         destination: `${process.env.NEXT_PUBLIC_API}/api/:path*`,
       },
     ];
-  }
+  },
 };
 
 module.exports = withMDX(nextConfig);
