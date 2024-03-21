@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import MDXContent from "../../mock/mdx-content.mdx";
 import Head from "next/head";
+import MDXContent from "../../mock/mdx-content.mdx";
 
 export default function MDXPage({ children }: { children: ReactNode }) {
   return (
