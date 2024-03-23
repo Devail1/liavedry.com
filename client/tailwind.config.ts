@@ -26,8 +26,11 @@ export default {
         light: {
           ...require("daisyui/src/theming/themes").light,
           primary: "#2563eb",
-          ".text-content": {
+          ".text-title": {
             color: "#141414",
+          },
+          ".text-subtitle": {
+            color: "#1f2937",
           },
           ".btn-md": {
             height: "2rem",
@@ -42,8 +45,12 @@ export default {
       {
         dark: {
           ...require("daisyui/src/theming/themes").dark,
-          ".text-content": {
+          "base-content": "#dddeee",
+          ".text-title": {
             color: "#f5f5f5",
+          },
+          ".text-subtitle": {
+            color: "#a6adbb",
           },
           ".btn-md": {
             height: "2rem",

@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import ThemeController from "./ThemeController";
-import SearchInput from "./SearchInput";
 
 function Navbar() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <div className="w-full mt-2">
       <div className="navbar bg-base-100 ">
@@ -19,7 +17,7 @@ function Navbar() {
           {/* <Dropdown /> */}
         </div>
         <div className="navbar-center ">
-          <div className="form-control hidden md:flex">
+          {/* <div className="form-control hidden md:flex">
             <label
               htmlFor="desktopSearch"
               className="input input-bordered input-md !outline-none flex items-center gap-2"
@@ -38,10 +36,10 @@ function Navbar() {
                 />
               </svg>
             </label>
-          </div>
+          </div> */}
         </div>
         <div className="navbar-end">
-          <SearchInput isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} />
+          {/* <SearchInput isOpen={isSearchOpen} setIsOpen={setIsSearchOpen} /> */}
           <ThemeController />
         </div>
       </div>
