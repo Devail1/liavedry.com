@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import type { MDXComponents } from 'mdx/types';
 import Image, { ImageProps } from 'next/image';
 

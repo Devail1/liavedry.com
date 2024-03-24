@@ -1,7 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { getAllPosts, getRunningQueriesThunk } from '@/redux/services/postsApi';
+import { wrapper } from '@/redux/store';
+import PostsList from '@/components/PostsList';
 
-export default function Home() {
+export default function Home({ posts }: { posts: any }) {
   return (
     <div>
       <Head>
@@ -37,7 +40,22 @@ export default function Home() {
             </a>
           </div>
         </div>
+        <div className="my-10 w-full ">
+          <h3 className="text-3xl mb-2 font-medium text-title">Recent Posts</h3>
+          <PostsList posts={posts} />
+        </div>
       </div>
     </div>
   );
 }
+
+export const getStaticProps = wrapper.getStaticProps((store) => async () => {
+  const { data } = await store.dispatch(getAllPosts.initiate(''));
+  await Promise.all(store.dispatch(getRunningQueriesThunk()));
+
+  return {
+    props: {
+      posts: data,
+    },
+  };
+});

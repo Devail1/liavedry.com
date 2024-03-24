@@ -1,12 +1,12 @@
-import express, { Request, Response } from "express";
-import { IPost, Post } from "../models/Post";
+import express, { Request, Response } from 'express';
+import { IPost, Post } from '../models/Post';
 
 const router = express.Router();
 
-router.post("/", async (req: Request, res: Response) => {
+router.post('/', async (req: Request, res: Response) => {
   try {
-    const { title, content } = req.body;
-    const post: IPost = new Post({ title, content });
+    const { slug, content } = req.body;
+    const post: IPost = new Post({ slug, content });
     await post.save();
     res.status(201).json(post);
   } catch (error: any) {
@@ -14,22 +14,22 @@ router.post("/", async (req: Request, res: Response) => {
   }
 });
 
-router.get("/", async (req: Request, res: Response) => {
+router.get('/', async (req: Request, res: Response) => {
   try {
-    const posts: IPost[] = await Post.find().select("-content"); // Optionally exclude content for performance
+    const posts: IPost[] = await Post.find().sort({ createdAt: -1 }).select('-content'); // Optionally exclude content for performance
     res.status(200).json(posts);
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
 });
 
-router.get("/:title", async (req: Request, res: Response) => {
-  const { title } = req.params;
+router.get('/:slug', async (req: Request, res: Response) => {
+  const { slug } = req.params;
 
   try {
-    const post: IPost | null = await Post.findOne({ title }); // Use title for query
+    const post: IPost | null = await Post.findOne({ slug }); // Use slug for query
     if (!post) {
-      return res.status(404).json({ message: "Post not found" });
+      return res.status(404).json({ message: 'Post not found' });
     }
     res.status(200).json(post);
   } catch (error: any) {
@@ -37,16 +37,16 @@ router.get("/:title", async (req: Request, res: Response) => {
   }
 });
 
-router.put("/:id", async (req: Request, res: Response) => {
+router.put('/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
-  const { title, content } = req.body;
+  const { slug, content } = req.body;
 
-  const updateData = { title, content };
+  const updateData = { slug, content };
 
   try {
     const updatedPost = await Post.findByIdAndUpdate(id, updateData, { new: true });
     if (!updatedPost) {
-      return res.status(404).json({ message: "Post not found" });
+      return res.status(404).json({ message: 'Post not found' });
     }
     res.status(200).json(updatedPost);
   } catch (error: any) {
@@ -54,15 +54,15 @@ router.put("/:id", async (req: Request, res: Response) => {
   }
 });
 
-router.delete("/:id", async (req: Request, res: Response) => {
+router.delete('/:id', async (req: Request, res: Response) => {
   const { id } = req.params;
 
   try {
     const deletedPost = await Post.findByIdAndDelete(id);
     if (!deletedPost) {
-      return res.status(404).json({ message: "Post not found" });
+      return res.status(404).json({ message: 'Post not found' });
     }
-    res.status(200).json({ message: "Post deleted successfully" });
+    res.status(200).json({ message: 'Post deleted successfully' });
   } catch (error: any) {
     res.status(500).json({ error: error.message });
   }
