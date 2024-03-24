@@ -2,7 +2,7 @@
 
 **_This blog post is based on a video by Coding Garden and explores how to deploy an Express API to Vercel._**
 
-![A waffle cone with a cloud](https://images.pexels.com/photos/1262302/pexels-photo-1262302.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
+![A stack of colorful shipping containers at a port facility](https://images.pexels.com/photos/1427541/pexels-photo-1427541.jpeg)
 
 While Vercel is known for its ease of deploying serverless functions and Next.js applications, it can also be used for Express APIs, albeit with some caveats. This tutorial will walk you through the process of deploying your Express API to Vercel, ensuring you're aware of the considerations involved.
 
