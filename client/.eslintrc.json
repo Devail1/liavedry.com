@@ -25,13 +25,8 @@
     "no-param-reassign": ["error", { "props": false }],
     "no-underscore-dangle": ["error", { "allow": ["__persistor"] }]
   },
-  "extends": [
-    "next/core-web-vitals",
-    "airbnb",
-    "airbnb-typescript",
-    "prettier"
-  ],
+  "extends": ["next/core-web-vitals", "airbnb", "airbnb-typescript", "prettier"],
   "parserOptions": {
-    "project": ["./tsconfig.json"]
+    "project": ["./client/tsconfig.json"]
   }
 }

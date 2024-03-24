@@ -1,5 +1,5 @@
-import Head from "next/head";
-import Image from "next/image";
+import Head from 'next/head';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -20,9 +20,7 @@ export default function Home() {
             />
           </div>
           <div className="flex flex-col grow max-w-lg">
-            <h1 className="text-2xl leading-10 font-medium text-title">
-              Hey, I&apos;m Liav 👋
-            </h1>
+            <h1 className="text-2xl leading-10 font-medium text-title">Hey, I&apos;m Liav 👋</h1>
             <h2 className="text-lg leading-6 font-normal text-subtitle">
               Lifelong learner, building digital experiences.
             </h2>
@@ -31,10 +29,7 @@ export default function Home() {
               href="http://mailto:liavedry@gmail.com"
               className="btn btn-md mt-4 btn-primary btn-block rounded-2xl text-white"
             >
-              <svg
-                viewBox="0 0 24 24"
-                className="w-4 h-4 fill-none stroke-current stroke-2"
-              >
+              <svg viewBox="0 0 24 24" className="w-4 h-4 fill-none stroke-current stroke-2">
                 <rect width="20" height="16" x="2" y="4" rx="2" />
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
               </svg>
