@@ -1,24 +1,16 @@
 /* eslint-disable import/prefer-default-export */
-import type { MDXComponents } from "mdx/types";
-import Image, { ImageProps } from "next/image";
+import type { MDXComponents } from 'mdx/types';
+import Image, { ImageProps } from 'next/image';
 
-export function useMDXComponents(components: MDXComponents): MDXComponents {
-  return {
-    h1: ({ children }) => <h1 className="!text-3xl md:!text-4xl font-bold !mb-6">{children}</h1>,
-    h2: ({ children }) => (
-      <h2 className="!text-xl md:!text-2xl font-semibold !mt-6 !mb-8">{children}</h2>
-    ),
-    img: (props) => (
-      <span className="relative block w-full aspect-[16/9]">
-        <Image
-          priority
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          {...(props as ImageProps)}
-        />
-      </span>
-    ),
-    ...components,
-  };
-}
+const CustomComponents = (components: MDXComponents) => ({
+  h1: ({ children }) => <h1 className="!text-2xl md:!text-3xl lg:!text-4xl font-bold">{children}</h1>,
+  h2: ({ children }) => <h2 className="!text-xl md:!text-2xl lg:!text-3xl font-semibold">{children}</h2>,
+  img: (props) => (
+    <span className="relative block w-full aspect-[16/9]">
+      <Image priority fill className="object-cover shadow-sm" {...(props as ImageProps)} />
+    </span>
+  ),
+  ...components,
+});
+
+export default CustomComponents;

@@ -10,7 +10,10 @@ function AppContainer({ Component, ...rest }: AppProps) {
 
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={(store as PersistedStore).__persistor}>
+      <PersistGate
+        loading={null}
+        persistor={(store as PersistedStore).__persistor}
+      >
         <Layout>
           <Component {...props} />
         </Layout>

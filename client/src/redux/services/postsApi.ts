@@ -8,7 +8,9 @@ export const postsApi = createApi({
     getAllPosts: builder.query({
       query: () => "posts",
       providesTags: (result) =>
-        result ? [...result.map(({ id }) => ({ type: "Posts", id })), "Posts"] : ["Posts"],
+        result
+          ? [...result.map(({ id }) => ({ type: "Posts", id })), "Posts"]
+          : ["Posts"],
     }),
     getPostBySlug: builder.query({
       query: (slug) => `posts/${slug}`,

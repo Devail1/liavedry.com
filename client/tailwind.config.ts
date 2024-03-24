@@ -19,7 +19,11 @@ export default {
       },
     },
   },
-  plugins: [require("daisyui"), require("@tailwindcss/typography"), "prettier-plugin-tailwindcss"],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("daisyui"),
+    "prettier-plugin-tailwindcss",
+  ],
   daisyui: {
     themes: [
       {
@@ -29,12 +33,12 @@ export default {
           ".text-title": {
             color: "#141414",
           },
-          ".text-subtitle": {
-            color: "#1f2937",
-          },
           ".btn-md": {
             height: "2rem",
             minHeight: "2rem",
+          },
+          ".text-subtitle": {
+            color: "#1f2937",
           },
           ".btn-circle": {
             height: "2.5rem",

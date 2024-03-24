@@ -18,5 +18,8 @@
     "jsx": "preserve"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "exclude": ["node_modules"]
 }
