@@ -4,9 +4,9 @@ function Alert({ children }: { children: ReactNode }) {
   return (
     <div
       role="alert"
-      className="sm:pt-6 rounded border-s-4 border-red-500 bg-red-50 p-4 sm:flex sm:items-center sm:space-x-4"
+      className="mt-4 sm:mt-10 mb-2 rounded border-s-4 warn-alert p-4 sm:flex sm:items-center sm:space-x-4"
     >
-      <span className="text-red-800">
+      <span className="warn-text-alert">
         <svg
           viewBox="0 0 24 24"
           strokeLinecap="round"
@@ -18,7 +18,7 @@ function Alert({ children }: { children: ReactNode }) {
           <path d="M12 17h.01" />
         </svg>
       </span>
-      <p className="mt-2 text-sm text-red-700">{children}</p>
+      <p className="mt-2 text-sm warn-alert-text">{children}</p>
     </div>
   );
 }

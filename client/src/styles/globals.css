@@ -27,3 +27,20 @@
 [data-theme="light"] .text-muted {
   color: #4b5563;
 }
+
+/* Alert */
+[data-theme="dark"] .warn-alert {
+  @apply border-red-600 bg-red-500/20;
+}
+
+[data-theme="light"] .warn-alert {
+  @apply border-red-500 bg-red-50;
+}
+
+[data-theme="dark"] .warn-alert-text {
+  @apply text-red-100;
+}
+
+[data-theme="light"] .warn-alert-text {
+  @apply text-red-700;
+}
