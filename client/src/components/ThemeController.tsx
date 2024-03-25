@@ -14,7 +14,7 @@ function ThemeController() {
   const isDarkTheme = currentTheme === "dark";
 
   return (
-    <button type="button" className="btn btn-ghost btn-md btn-circle ">
+    <button type="button" className="btn btn-ghost btn-circle ">
       <label className="swap swap-rotate" htmlFor="theme-controller">
         {/* this hidden checkbox controls the state */}
         <input

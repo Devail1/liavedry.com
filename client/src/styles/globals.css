@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes expand {
+  0% {
+    transform: translateX(0%) scaleX(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%) scaleX(100%);
+    opacity: 1;
+  }
+}
+
+.animate-expand {
+  animation: expand 0.3s ease-in-out;
+}
+
+.btn-md {
+  @apply min-h-8 h-8;
+}
+
+.btn-circle {
+  @apply min-h-10 min-w-10 h-10 w-10;
+}
+
+[data-theme="dark"] .text-greeting {
+  color: #f5f5f5;
+}
+
+[data-theme="dark"] .text-description {
+  color: #a6adbb;
+}
+
+[data-theme="dark"] .text-muted {
+  color: #9ca3af;
+}
+
+[data-theme="light"] .text-muted {
+  color: #4b5563;
+}

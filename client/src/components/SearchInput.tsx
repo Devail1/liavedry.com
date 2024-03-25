@@ -21,7 +21,7 @@ function SearchInput({ isOpen, setIsOpen }) {
           htmlFor="mobileSearch"
           className={clsx(
             "z-10 pr-0 !outline-none flex items-center origin-right mr-1",
-            isOpen && "input input-bordered",
+            isOpen && "input input-bordered"
           )}
         >
           {isOpen && (
