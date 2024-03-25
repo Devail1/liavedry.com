@@ -8,7 +8,14 @@ const CustomComponents = (components: MDXComponents) => ({
   ),
   img: (props: ImgHTMLAttributes<HTMLImageElement>) => (
     <span className="relative block w-full aspect-[16/9]">
-      <Image priority fill className="object-cover shadow-sm" {...(props as ImageProps)} />
+      <Image
+        className="object-cover shadow-sm data-[loading=true]:skeleton"
+        onLoad={(e) => e.currentTarget.setAttribute("data-loading", "false")}
+        data-loading="true"
+        priority
+        fill
+        {...(props as ImageProps)}
+      />
     </span>
   ),
   ...components,
