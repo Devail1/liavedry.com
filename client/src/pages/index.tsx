@@ -1,8 +1,8 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import { getAllPosts, getRunningQueriesThunk } from '@/redux/services/postsApi';
-import { wrapper } from '@/redux/store';
-import PostsList from '@/components/PostsList';
+import Head from "next/head";
+import Image from "next/image";
+import { getAllPosts, getRunningQueriesThunk } from "@/redux/services/postsApi";
+import { wrapper } from "@/redux/store";
+import PostsList from "@/components/PostsList";
 
 export default function Home({ posts }: { posts: any }) {
   return (
@@ -10,7 +10,7 @@ export default function Home({ posts }: { posts: any }) {
       <Head>
         <title>Liav Edry | Web Developer</title>
       </Head>
-      <div className="flex flex-col gap-4 ">
+      <div className="flex flex-col gap-4 pt-2">
         <div className="flex flex-col space-y-2 w-full md:items-center md:gap-x-8 md:flex-row">
           <div className="relative w-24 h-24 shrink-0">
             <Image
@@ -40,8 +40,8 @@ export default function Home({ posts }: { posts: any }) {
             </a>
           </div>
         </div>
-        <div className="my-10 w-full ">
-          <h3 className="text-3xl mb-2 font-medium text-title">Recent Posts</h3>
+        <div className="my-6 md:my-8 w-full ">
+          <h3 className="text-2xl md:mb-2 font-medium text-title">Recent Posts</h3>
           <PostsList posts={posts} />
         </div>
       </div>
@@ -50,7 +50,7 @@ export default function Home({ posts }: { posts: any }) {
 }
 
 export const getStaticProps = wrapper.getStaticProps((store) => async () => {
-  const { data } = await store.dispatch(getAllPosts.initiate(''));
+  const { data } = await store.dispatch(getAllPosts.initiate(""));
   await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
   return {

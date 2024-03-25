@@ -1,6 +1,6 @@
-import React from 'react';
-import Link from 'next/link';
-import { formatDate, formatTitle } from '@/utils';
+import React from "react";
+import Link from "next/link";
+import { formatDate, formatTitle } from "@/utils";
 
 type TPost = {
   id: number;
@@ -17,7 +17,7 @@ function PostsList({ posts }: { posts: TPost[] }) {
           post.published && (
             <div className="py-2" key={post.id}>
               <Link href={`/blog/${post.slug}`}>
-                <p className="text-xl">{formatTitle(post.title)}</p>
+                <p className="md:text-xl">{formatTitle(post.title)}</p>
               </Link>
               <p className="text-sm text-gray-500">{formatDate(post.createdAt)}</p>
             </div>

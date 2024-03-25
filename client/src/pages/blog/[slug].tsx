@@ -1,11 +1,11 @@
-import { Suspense } from 'react';
-import { serialize } from 'next-mdx-remote/serialize';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import Head from 'next/head';
-import MdxComponents from '@/mdx-components';
-import { makeStore, wrapper } from '@/redux/store';
-import { getAllPosts, getPostBySlug, getRunningQueriesThunk } from '@/redux/services/postsApi';
-import { formatDate, formatTitle } from '@/utils';
+import { Suspense } from "react";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import Head from "next/head";
+import MdxComponents from "@/mdx-components";
+import { makeStore, wrapper } from "@/redux/store";
+import { getAllPosts, getPostBySlug, getRunningQueriesThunk } from "@/redux/services/postsApi";
+import { formatDate, formatTitle } from "@/utils";
 
 export default function Post({
   source,
@@ -23,7 +23,8 @@ export default function Post({
       </Head>
       <Suspense fallback={<>Loading...</>}>
         <article className="prose lg:prose-xl prose-img:rounded-xl prose-img:my-0 prose-a:text-blue-400">
-          <p className="text-xl">{date}</p>
+          <h1 className="prose text-2xl md:text-3xl lg:text-4xl font-semibold !mb-0">{title}</h1>
+          <p className="prose mt-1 md:!mt-2">{date}</p>
           <MDXRemote {...source} components={MdxComponents} />
         </article>
       </Suspense>
@@ -33,7 +34,7 @@ export default function Post({
 
 export async function getStaticPaths() {
   const store = makeStore();
-  const { data } = await store.dispatch(getAllPosts.initiate(''));
+  const { data } = await store.dispatch(getAllPosts.initiate(""));
 
   return {
     paths: data?.map((p) => `/blog/${p.slug}`) || [],
@@ -49,7 +50,7 @@ export const getStaticProps = wrapper.getStaticProps(
       const { data } = await store.dispatch(getPostBySlug.initiate(slug));
       await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
-      const formattedTitle = formatTitle(slug as string);
+      const formattedTitle = formatTitle(data.title);
       const formattedDate = formatDate(data?.createdAt);
 
       const mdxSource = await serialize(data?.content);
