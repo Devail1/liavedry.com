@@ -1,12 +1,14 @@
 import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
 import { ImgHTMLAttributes } from "react";
+import Alert from "./components/Alert";
 
 const CustomComponents = (components: MDXComponents) => ({
   h2: ({ children }) => (
     <h2 className="!text-xl md:!text-2xl lg:!text-3xl font-semibold">{children}</h2>
   ),
-  img: (props: ImgHTMLAttributes<HTMLImageElement>) => (
+  blockquote: ({ children }) => <Alert>{children}</Alert>,
+  img: (props: ImgHTMLAttributes<HTMLImageElement>) => {
     <span className="relative block w-full aspect-[16/9]">
       <Image
         className="object-cover shadow-sm data-[loading=true]:skeleton"
@@ -16,8 +18,8 @@ const CustomComponents = (components: MDXComponents) => ({
         fill
         {...(props as ImageProps)}
       />
-    </span>
-  ),
+    </span>;
+  },
   ...components,
 });
 
