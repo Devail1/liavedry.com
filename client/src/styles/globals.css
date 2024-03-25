@@ -42,5 +42,5 @@
 }
 
 [data-theme="light"] .warn-alert-text {
-  @apply text-red-700;
+  @apply text-red-500;
 }
