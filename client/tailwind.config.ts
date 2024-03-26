@@ -3,7 +3,11 @@
 /* eslint-disable global-require */
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
-  plugins: [require("@tailwindcss/typography"), require("daisyui"), "prettier-plugin-tailwindcss"],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("daisyui"),
+    "prettier-plugin-tailwindcss",
+  ],
   daisyui: {
     themes: [
       {

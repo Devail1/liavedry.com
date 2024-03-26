@@ -17,9 +17,13 @@ function PostsList({ posts }: { posts: TPost[] }) {
           post.published && (
             <div className="py-2" key={post.id}>
               <Link href={`/blog/${post.slug}`}>
-                <p className="text-sm md:text-base font-semibold">{formatTitle(post.title)}</p>
+                <p className="text-sm font-semibold md:text-base">
+                  {formatTitle(post.title)}
+                </p>
               </Link>
-              <p className="text-xs text-muted">{formatDate(post.createdAt, "en-GB")}</p>
+              <p className="text-muted text-xs">
+                {formatDate(post.createdAt, "en-GB")}
+              </p>
             </div>
           )
       )}

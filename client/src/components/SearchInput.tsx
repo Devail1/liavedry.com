@@ -20,7 +20,7 @@ function SearchInput({ isOpen, setIsOpen }) {
         <label
           htmlFor="mobileSearch"
           className={clsx(
-            "z-10 pr-0 !outline-none flex items-center origin-right mr-1",
+            "z-10 mr-1 flex origin-right items-center pr-0 !outline-none",
             isOpen && "input input-bordered"
           )}
         >
@@ -28,13 +28,13 @@ function SearchInput({ isOpen, setIsOpen }) {
             <input
               id="mobileSearch"
               type="text"
-              className="grow animate-expand origin-right w-full"
+              className="w-full grow origin-right animate-expand"
               placeholder="Search"
             />
           )}
           <button
             type="button"
-            className="btn btn-ghost btn-md btn-circle md:hidden mr-1"
+            className="btn btn-circle btn-ghost btn-md mr-1 md:hidden"
             onClick={toggleSearch}
           >
             <svg

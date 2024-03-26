@@ -4,7 +4,11 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Head from "next/head";
 import MdxComponents from "@/mdx-components";
 import { makeStore, wrapper } from "@/redux/store";
-import { getAllPosts, getPostBySlug, getRunningQueriesThunk } from "@/redux/services/postsApi";
+import {
+  getAllPosts,
+  getPostBySlug,
+  getRunningQueriesThunk,
+} from "@/redux/services/postsApi";
 import { formatDate, formatTitle } from "@/utils";
 
 export default function Post({
@@ -22,8 +26,10 @@ export default function Post({
         <title>Liav Edry | {title} </title>
       </Head>
       <Suspense fallback={<>Loading...</>}>
-        <article className="prose lg:prose-xl prose-img:rounded-xl prose-img:my-0 prose-a:text-blue-400">
-          <h1 className="prose text-2xl md:text-3xl lg:text-4xl font-semibold !mb-0">{title}</h1>
+        <article className="prose lg:prose-xl prose-a:text-blue-400 prose-img:my-0 prose-img:rounded-xl">
+          <h1 className="prose !mb-0 text-2xl font-semibold md:text-3xl lg:text-4xl">
+            {title}
+          </h1>
           <p className="prose mt-1 md:!mt-2">{date}</p>
           <MDXRemote {...source} components={MdxComponents} />
         </article>

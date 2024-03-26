@@ -17,7 +17,7 @@ function Dropdown() {
     <li>
       <details ref={menuRef}>
         <summary>About</summary>
-        <ul className="p-2 z-10 bg-base-100 rounded-t-none">
+        <ul className="z-10 rounded-t-none bg-base-100 p-2">
           <li>
             <Link href="/">Blog</Link>
           </li>
