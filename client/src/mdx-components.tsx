@@ -10,16 +10,19 @@ const CustomComponents = (components: MDXComponents) => ({
   ),
   blockquote: ({ children }) => <Alert>{children}</Alert>,
   img: (props) => (
-    <span className="relative block aspect-[16/9] w-full">
-      <Image
-        className="object-cover shadow-sm data-[loading=true]:skeleton"
-        onLoad={(e) => e.currentTarget.setAttribute("data-loading", "false")}
-        data-loading="true"
-        priority
-        fill
-        {...(props as ImageProps)}
-      />
-    </span>
+    <figure>
+      <div className="relative block aspect-[16/9] w-full">
+        <Image
+          className="object-cover shadow-sm data-[loading=true]:skeleton"
+          onLoad={(e) => e.currentTarget.setAttribute("data-loading", "false")}
+          data-loading="true"
+          priority
+          fill
+          {...(props as ImageProps)}
+        />
+      </div>
+      <figcaption className="text-center">{props.title}</figcaption>
+    </figure>
   ),
   ...components,
 });
