@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Head from "next/head";
-import MdxComponents from "@/mdx-components";
+import useMDXComponents from "@/mdx-components";
 import { makeStore, wrapper } from "@/redux/store";
 import {
   getAllPosts,
@@ -11,7 +11,7 @@ import {
 } from "@/redux/services/postsApi";
 import { formatDate, formatTitle } from "@/utils";
 
-export default function Post({
+export default function BlogPostBySlug({
   source,
   title,
   date,
@@ -26,12 +26,12 @@ export default function Post({
         <title>Liav Edry | {title} </title>
       </Head>
       <Suspense fallback={<>Loading...</>}>
-        <article className="prose lg:prose-xl prose-a:text-blue-400 prose-img:my-0 prose-img:rounded-xl">
+        <article className="prose lg:prose-xl prose-a:text-blue-400 prose-figcaption:text-sm prose-img:my-0 prose-img:rounded-xl md:prose-figcaption:text-base">
           <h1 className="prose !mb-0 text-2xl font-semibold md:text-3xl lg:text-4xl">
             {title}
           </h1>
           <p className="prose mt-1 md:!mt-2">{date}</p>
-          <MDXRemote {...source} components={MdxComponents} />
+          <MDXRemote {...source} components={useMDXComponents} />
         </article>
       </Suspense>
     </>
