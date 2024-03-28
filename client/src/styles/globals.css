@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Layout */
+.min-h-layout {
+  @apply min-h-[calc(100vh-144px)];
+}
 /* Buttons */
 .btn-md {
   @apply h-8 min-h-8;

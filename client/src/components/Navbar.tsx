@@ -4,7 +4,7 @@ import ThemeController from "./ThemeController";
 
 function Navbar() {
   return (
-    <div className="mt-2 w-full">
+    <div className="h-auto w-full">
       <div className="navbar bg-base-100 ">
         <div className="navbar-start ">
           <div className="flex-none">

@@ -10,7 +10,7 @@ export default function Home({ posts }: { posts: any }) {
       <Head>
         <title>Liav Edry | Web Developer</title>
       </Head>
-      <div className="flex flex-col gap-4 pt-2">
+      <div className="flex flex-col gap-4 pt-4">
         <div className="flex w-full flex-col space-y-2 md:flex-row md:items-center md:gap-x-8">
           <div className="relative h-24 w-24 shrink-0">
             <Image
@@ -31,7 +31,7 @@ export default function Home({ posts }: { posts: any }) {
             </h2>
 
             <a
-              href="http://mailto:liavedry@gmail.com"
+              href="mailto:livedry@gmail.com?subject=Inquiry - [Your Name]&body=Hi there,%0AI came across your website and was impressed by your work. I'm a [your job title/expertise], interested in [briefly state your interest].%0AId love to connect.%0AThanks,%0A[Your Name]"
               className="btn btn-primary btn-md btn-block mt-4 rounded-full text-white"
             >
               <svg

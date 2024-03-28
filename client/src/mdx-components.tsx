@@ -1,6 +1,7 @@
 import type { MDXComponents as TMDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
 import Alert from "./components/Alert";
+import { serialize } from "next-mdx-remote/serialize";
 
 function useMDXComponents(components: TMDXComponents): TMDXComponents {
   return {
@@ -25,7 +26,7 @@ function useMDXComponents(components: TMDXComponents): TMDXComponents {
           />
         </div>
         {props.title && (
-          <figcaption className="text-center">{props.title}</figcaption>
+          <figcaption className="prose text-center">{props.title}</figcaption>
         )}
       </figure>
     ),

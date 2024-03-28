@@ -11,7 +11,7 @@ function Layout({ children }: { children: ReactNode }) {
     <div data-theme={currentTheme} className="flex min-h-screen flex-col">
       <div className="container mx-auto max-w-3xl grow">
         <Navbar />
-        <main className="grow px-6 pb-8 pt-2 md:px-4">{children}</main>
+        <main className="min-h-layout grow px-6 md:px-4">{children}</main>
       </div>
       <Footer />
     </div>
