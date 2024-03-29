@@ -13,7 +13,7 @@ function useMDXComponents(components: TMDXComponents): TMDXComponents {
       <figure>
         <div className="relative block aspect-[16/9] w-full">
           <Image
-            className="my-0 rounded-xl object-cover shadow-sm data-[loading=true]:skeleton"
+            className="rounded-xl object-cover shadow-sm data-[loading=true]:skeleton"
             onLoad={(e) =>
               e.currentTarget.setAttribute("data-loading", "false")
             }

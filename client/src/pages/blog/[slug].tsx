@@ -26,7 +26,7 @@ export default function BlogPostBySlug({
         <title>Liav Edry | {title} </title>
       </Head>
       <Suspense fallback={<>Loading...</>}>
-        <article className="prose pb-8 pt-2 lg:prose-xl prose-a:font-normal prose-a:text-blue-400">
+        <article className="prose pb-8 pt-2 lg:prose-xl prose-a:font-normal prose-a:text-blue-400 prose-img:my-0">
           <h1 className="prose !mb-0 text-2xl font-semibold md:text-3xl lg:text-4xl">
             {title}
           </h1>
