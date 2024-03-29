@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Image from "next/image";
 import { getAllPosts, getRunningQueriesThunk } from "@/redux/services/postsApi";
 import { wrapper } from "@/redux/store";
 import Experience from "@/ui/sections/Experience";
