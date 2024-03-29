@@ -39,7 +39,7 @@ function Experience({ experiences }: { experiences: TExperience[] }) {
         >
           <div className="mb-2">
             <p className="font-semibold md:text-lg">{experience.role}</p>
-            <a href={experience.companyLink} target="_blank">
+            <a href={experience.companyLink} target="_blank" rel="noreferrer">
               <p className="text-gray-500 underline">
                 {experience.companyName}
               </p>
