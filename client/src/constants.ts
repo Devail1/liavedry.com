@@ -4,18 +4,21 @@ export const experiences = [
     companyName: "Rexail",
     dates: "2022 - 2023",
     tags: ["React", "Redux", "TypeScript", "Next.js", "MUI", "Docker", "AWS"],
+    companyLink: "https://rexail.co.il/",
   },
   {
     role: "Frontend Developer",
     companyName: "NOWGUA",
     dates: "2020 - 2022",
     tags: ["React", "Storybook", "ElasticSearch", "Redux", "SCSS"],
+    companyLink: "https://nowgua.com/",
   },
   {
     role: "Operations Manager",
     companyName: "MyPlay",
     dates: "2016 - 2020",
     tags: ["Cost Reduction", "Streamlining Operations", "Project Management"],
+    companyLink: "https://myplay.com/",
   },
 ];
 

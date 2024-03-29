@@ -39,7 +39,11 @@ function Experience({ experiences }: { experiences: TExperience[] }) {
         >
           <div className="mb-2">
             <p className="font-semibold md:text-lg">{experience.role}</p>
-            <p className="text-gray-500 underline">{experience.companyName}</p>
+            <a href={experience.companyLink} target="_blank">
+              <p className="text-gray-500 underline">
+                {experience.companyName}
+              </p>
+            </a>
             <p className="text-gray-500">{experience.dates}</p>
           </div>
           <div className="flex flex-wrap gap-2">

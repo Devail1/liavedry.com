@@ -11,6 +11,7 @@ export type TExperience = {
   companyName: string;
   dates: string;
   tags: string[];
+  companyLink: string;
 };
 
 export type TProject = {

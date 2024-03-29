@@ -64,7 +64,7 @@ function Navbar() {
           <ThemeController />
         </div>
       </div>
-      <div className="divider my-0 px-4" />
+      <div className="divider my-0 h-auto px-4" />
     </div>
   );
 }
