@@ -2,7 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { getAllPosts, getRunningQueriesThunk } from "@/redux/services/postsApi";
 import { wrapper } from "@/redux/store";
-import PostsList from "@/components/PostsList";
+import ExperienceSection from "@/ui/sections/ExperienceSection";
+import PostsSection from "@/ui/sections/PostsSection";
 
 export default function Home({ posts }: { posts: any }) {
   return (
@@ -45,9 +46,9 @@ export default function Home({ posts }: { posts: any }) {
             </a>
           </div>
         </div>
-        <div className="my-6 w-full md:my-8 ">
-          <h3 className="text-xl font-medium md:mb-2 md:text-3xl">Writing</h3>
-          <PostsList posts={posts} />
+        <div className="w-full space-y-12 md:my-8 ">
+          <PostsSection posts={posts} />
+          <ExperienceSection />
         </div>
       </div>
     </div>

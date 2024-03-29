@@ -9,9 +9,10 @@ type TPost = {
   title: string;
   createdAt: string;
 };
-function PostsList({ posts }: { posts: TPost[] }) {
+function PostsSection({ posts }: { posts: TPost[] }) {
   return (
     <div>
+      <h3 className="text-xl font-medium md:mb-2 md:text-3xl">Writing</h3>
       {posts?.map(
         (post) =>
           post.published && (
@@ -31,4 +32,4 @@ function PostsList({ posts }: { posts: TPost[] }) {
   );
 }
 
-export default PostsList;
+export default PostsSection;

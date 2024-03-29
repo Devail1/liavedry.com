@@ -1,6 +1,6 @@
 import type { MDXComponents as TMDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
-import Alert from "./components/Alert";
+import Alert from "@/ui/components/Alert";
 
 function useMDXComponents(components: TMDXComponents): TMDXComponents {
   return {
