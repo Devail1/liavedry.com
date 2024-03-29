@@ -1,7 +1,6 @@
 import type { MDXComponents as TMDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
 import Alert from "./components/Alert";
-import { serialize } from "next-mdx-remote/serialize";
 
 function useMDXComponents(components: TMDXComponents): TMDXComponents {
   return {
@@ -10,12 +9,11 @@ function useMDXComponents(components: TMDXComponents): TMDXComponents {
         {children}
       </h2>
     ),
-    blockquote: ({ children }) => <Alert>{children}</Alert>,
     img: (props) => (
       <figure>
         <div className="relative block aspect-[16/9] w-full">
           <Image
-            className="object-cover shadow-sm data-[loading=true]:skeleton"
+            className="my-0 rounded-xl object-cover shadow-sm data-[loading=true]:skeleton"
             onLoad={(e) =>
               e.currentTarget.setAttribute("data-loading", "false")
             }
@@ -26,10 +24,15 @@ function useMDXComponents(components: TMDXComponents): TMDXComponents {
           />
         </div>
         {props.title && (
-          <figcaption className="prose text-center">{props.title}</figcaption>
+          <figcaption
+            className="text-muted text-center text-sm md:text-base"
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{ __html: props.title }}
+          />
         )}
       </figure>
     ),
+    blockquote: ({ children }) => <Alert>{children}</Alert>,
     ...components,
   };
 }

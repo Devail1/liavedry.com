@@ -47,7 +47,7 @@ function LoginPage() {
             </div>
             <div className="text-center">
               <Link href="/auth/signup" className="text-sm text-base-content">
-                Don't have an account? Sign up
+                Don&apos;t have an account? Sign up
               </Link>
             </div>
           </form>
