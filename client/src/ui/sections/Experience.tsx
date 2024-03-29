@@ -31,14 +31,14 @@ function Experience({ experiences }: { experiences: TExperience[] }) {
 
   return (
     <div>
-      <h3 className="text-xl font-medium md:mb-2 md:text-3xl">Experience</h3>
+      <h3 className="text-2xl font-medium md:mb-2 md:text-3xl">Experience</h3>
       {experiences.map((experience) => (
         <div
           key={experience.companyName}
           className="space-y-2 rounded-lg bg-base-100/10 py-4"
         >
           <div className="mb-2">
-            <p className="text-lg font-bold">{experience.role}</p>
+            <p className="font-semibold md:text-lg">{experience.role}</p>
             <p className="text-gray-500 underline">{experience.companyName}</p>
             <p className="text-gray-500">{experience.dates}</p>
           </div>
@@ -46,7 +46,10 @@ function Experience({ experiences }: { experiences: TExperience[] }) {
             {experience.tags.map((tag) => (
               <div
                 key={tag}
-                className={clsx("badge rounded-lg py-3", getTagColor(tag))}
+                className={clsx(
+                  "badge rounded-lg px-2 py-1 text-xs font-medium",
+                  getTagColor(tag)
+                )}
               >
                 {tag}
               </div>

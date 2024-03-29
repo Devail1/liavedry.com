@@ -8,10 +8,10 @@ function Layout({ children }: { children: ReactNode }) {
   const currentTheme = useSelector(selectTheme);
 
   return (
-    <div data-theme={currentTheme} className="flex min-h-screen flex-col">
+    <div data-theme={currentTheme} className="min-h-screen">
       <div className="container mx-auto max-w-3xl grow">
         <Navbar />
-        <main className="min-h-layout grow px-6 md:px-4">{children}</main>
+        <main className="min-h-layout grow p-6">{children}</main>
       </div>
       <Footer />
     </div>

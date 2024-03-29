@@ -5,7 +5,7 @@ import ThemeController from "./ThemeController";
 function Navbar() {
   return (
     <div className="h-auto w-full">
-      <div className="navbar bg-base-100 ">
+      <div className="navbar bg-base-100">
         <div className="navbar-start ">
           <div className="flex-none">
             <ul className="menu menu-horizontal gap-2 px-1">

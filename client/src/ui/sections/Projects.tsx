@@ -4,7 +4,7 @@ import React from "react";
 function Projects({ projects }: { projects: TProject[] }) {
   return (
     <div>
-      <h3 className="text-xl font-medium md:mb-2 md:text-3xl">Projects</h3>
+      <h3 className="text-2xl font-medium md:mb-2 md:text-3xl">Projects</h3>
       {projects?.map((project) => (
         <div className="py-2" key={project.name}>
           <a href={project.linkHref}>

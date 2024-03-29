@@ -6,7 +6,7 @@ import { TPost } from "@/types";
 function Posts({ posts }: { posts: TPost[] }) {
   return (
     <div>
-      <h3 className="text-xl font-medium md:mb-2 md:text-3xl">Writing</h3>
+      <h3 className="text-2xl font-medium md:mb-2 md:text-3xl">Writing</h3>
       {posts?.map(
         (post) =>
           post.published && (
