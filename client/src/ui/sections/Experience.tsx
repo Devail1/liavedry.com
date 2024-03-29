@@ -1,28 +1,8 @@
+import { TExperience } from "@/types";
 import clsx from "clsx";
 import React from "react";
 
-function ExperienceSection() {
-  const experiences = [
-    {
-      role: "Frontend Developer",
-      companyName: "Rexail",
-      dates: "2022 - 2023",
-      tags: ["React", "Redux", "TypeScript", "Next.js", "MUI", "Docker", "AWS"],
-    },
-    {
-      role: "Frontend Developer",
-      companyName: "NOWGUA",
-      dates: "2020 - 2022",
-      tags: ["React", "Storybook", "ElasticSearch", "Redux", "SCSS"],
-    },
-    {
-      role: "Operations Manager",
-      companyName: "MyPlay",
-      dates: "2016 - 2020",
-      tags: ["Cost Reduction", "Streamlining Operations", "Project Management"],
-    },
-  ];
-
+function Experience({ experiences }: { experiences: TExperience[] }) {
   const getTagColor = (tag) => {
     switch (tag.toLowerCase()) {
       case "react":
@@ -78,4 +58,4 @@ function ExperienceSection() {
   );
 }
 
-export default ExperienceSection;
+export default Experience;

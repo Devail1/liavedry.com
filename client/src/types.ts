@@ -1,0 +1,20 @@
+export type TPost = {
+  id: number;
+  slug: string;
+  published: boolean;
+  title: string;
+  createdAt: string;
+};
+
+export type TExperience = {
+  role: string;
+  companyName: string;
+  dates: string;
+  tags: string[];
+};
+
+export type TProject = {
+  name: string;
+  description: string;
+  linkHref: string;
+};

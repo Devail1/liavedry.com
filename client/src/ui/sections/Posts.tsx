@@ -1,15 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { formatDate, formatTitle } from "@/utils";
+import { TPost } from "@/types";
 
-type TPost = {
-  id: number;
-  slug: string;
-  published: boolean;
-  title: string;
-  createdAt: string;
-};
-function PostsSection({ posts }: { posts: TPost[] }) {
+function Posts({ posts }: { posts: TPost[] }) {
   return (
     <div>
       <h3 className="text-xl font-medium md:mb-2 md:text-3xl">Writing</h3>
@@ -32,4 +26,4 @@ function PostsSection({ posts }: { posts: TPost[] }) {
   );
 }
 
-export default PostsSection;
+export default Posts;

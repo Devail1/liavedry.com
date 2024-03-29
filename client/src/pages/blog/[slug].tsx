@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import Head from "next/head";
-import useMDXComponents from "@/mdx-components";
+import useMDXComponents from "@/ui/components/mdx-components";
 import { makeStore, wrapper } from "@/redux/store";
 import {
   getAllPosts,
