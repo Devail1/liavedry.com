@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import { formatDate, formatTitle } from "@/utils";
 import { TPost } from "@/types";
+import formatDate from "@/utils";
 
 function Posts({ posts }: { posts: TPost[] }) {
   return (
@@ -13,7 +13,7 @@ function Posts({ posts }: { posts: TPost[] }) {
             <div className="py-2" key={post.id}>
               <Link href={`/blog/${post.slug}`}>
                 <p className="text-sm font-semibold md:text-base">
-                  {formatTitle(post.title)}
+                  {post.title}
                 </p>
               </Link>
               <p className="text-muted text-xs">

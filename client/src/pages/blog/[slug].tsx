@@ -9,7 +9,7 @@ import {
   getPostBySlug,
   getRunningQueriesThunk,
 } from "@/redux/services/postsApi";
-import { formatDate, formatTitle } from "@/utils";
+import formatDate from "@/utils";
 
 export default function BlogPostBySlug({
   source,
@@ -56,7 +56,6 @@ export const getStaticProps = wrapper.getStaticProps(
       const { data } = await store.dispatch(getPostBySlug.initiate(slug));
       await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
-      const formattedTitle = formatTitle(data.title);
       const formattedDate = formatDate(data?.createdAt);
 
       const mdxSource = await serialize(data?.content);
@@ -64,8 +63,8 @@ export const getStaticProps = wrapper.getStaticProps(
       return {
         props: {
           source: mdxSource,
-          title: formattedTitle,
           date: formattedDate,
+          title: data.title,
         },
       };
     }

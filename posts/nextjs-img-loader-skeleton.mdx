@@ -1,0 +1,54 @@
+# Supercharge Your Next.js Images with Simple Skeleton Loaders
+
+Ever stare at a blank canvas while your Next.js images load?
+
+Skeleton loaders are your secret weapon. These lightweight placeholders keep users engaged while images load in the background, delivering a smooth and frustration-free experience.
+
+The best part? You can achieve this magic with just CSS and Tailwind CSS. No complex JavaScript required!
+
+**Introduction**
+
+Why Skeleton Loaders?
+
+Improved User Experience: Bridge the gap between blank pages and loaded images, keeping users engaged.
+Enhanced First Impressions: Polished initial load makes a great first impression.
+Simplicity: Clean and straightforward approach using the power of CSS and Tailwind CSS.
+
+We'll use CSS to create a placeholder effect while images load. This keeps users engaged with a lightweight solution powered by CSS and data attributes.
+
+![Next.js image optimization code snippet](https://res.cloudinary.com/di41jhirl/image/upload/v1712148760/nextjs-img-loader-snippet.png ' <span> Credit: <a href="https://github.com/vercel/next.js/discussions/35675#discussioncomment-8519222">@michalhonc</a> </span>')
+
+**Michalhonc's Code Snippet Explained**
+
+Let's dive into the code snippet from michalhonc that demonstrates this approach:
+
+Here's a breakdown of what each part does:
+
+- `data-loaded='false'`: This sets a custom data attribute named "loaded" with the initial value "false" to indicate that the image hasn't loaded yet.
+- `onLoad` event handler: This defines a function that triggers when the image finishes loading.
+- Function within `onLoad`: This function updates the value of the "loaded" data attribute to "true" once the image has loaded.
+- Tailwind classes: These classes leverage Tailwind CSS to apply a "pulse" animation effect and a light gray background only when the "loaded" data attribute is "false", providing a basic placeholder effect.
+
+**Benefits**
+
+This approach offers several advantages:
+
+- **Reduced JavaScript Usage:** By relying on CSS and data attributes, we avoid the need for extensive JavaScript tracking logic using `useState` or similar methods, resulting in cleaner and potentially more performant code.
+- **Improved Performance:** Eliminating unnecessary JavaScript execution for basic loading states can have a positive impact on website performance, especially for users on mobile devices or slower internet connections.
+- **Cleaner Code:** Separating loading state logic into CSS and data attributes keeps the image component code concise and easier to maintain.
+
+**Additional Considerations**
+
+While this technique offers a valuable solution for basic scenarios, it's important to consider its limitations:
+
+- **Limited Customization:** Compared to custom JavaScript solutions, this approach offers less flexibility for complex loading state animations or interactions.
+- **Browser Compatibility:** While data attributes are widely supported, older browsers might not handle them as efficiently.
+  For situations requiring advanced loading state features or extensive customization, libraries specifically designed for image loading with advanced functionalities might be a better choice.
+
+**Conclusion**
+
+By leveraging CSS and data attributes, we can achieve a clean and efficient way to manage loading states for Next.js image components. This approach reduces JavaScript usage, potentially improves performance, and keeps the code cleaner. While it has limitations for complex scenarios, it's a valuable technique for optimizing basic image loading experiences in your Next.js applications.
+
+**Inspired By**
+
+This blog post was inspired by a valuable code snippet shared by michalhonc on the Next.js discussion forum. You can find the original discussion thread [here](https://github.com/vercel/next.js/discussions/35675#discussioncomment-8519222).
