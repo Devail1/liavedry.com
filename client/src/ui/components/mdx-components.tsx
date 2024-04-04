@@ -9,10 +9,11 @@ function useMDXComponents(components: TMDXComponents): TMDXComponents {
         {children}
       </h2>
     ),
-    img: (props) => (
+    img: ({ alt, title, ...props }) => (
       <figure>
         <div className="relative block aspect-video w-full">
           <Image
+            alt={alt}
             className="rounded-xl object-cover shadow-sm data-[loading=true]:skeleton"
             onLoad={(e) =>
               e.currentTarget.setAttribute("data-loading", "false")
@@ -23,11 +24,11 @@ function useMDXComponents(components: TMDXComponents): TMDXComponents {
             {...(props as ImageProps)}
           />
         </div>
-        {props.title && (
+        {title && (
           <figcaption
             className="*:text-muted text-center text-sm md:text-base"
             // eslint-disable-next-line react/no-danger
-            dangerouslySetInnerHTML={{ __html: props.title }}
+            dangerouslySetInnerHTML={{ __html: title }}
           />
         )}
       </figure>
