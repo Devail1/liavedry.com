@@ -1,3 +1,4 @@
+import rehypeHighlight from "rehype-highlight";
 import { Suspense } from "react";
 import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
@@ -58,7 +59,11 @@ export const getStaticProps = wrapper.getStaticProps(
 
       const formattedDate = formatDate(data?.createdAt);
 
-      const mdxSource = await serialize(data?.content);
+      const mdxSource = await serialize(data?.content, {
+        mdxOptions: {
+          rehypePlugins: [rehypeHighlight as any],
+        },
+      });
 
       return {
         props: {

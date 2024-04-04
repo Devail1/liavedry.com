@@ -6,8 +6,9 @@ import Posts from "@/ui/sections/Posts";
 import Projects from "@/ui/sections/Projects";
 import { experiences, projects } from "@/constants";
 import Greeting from "@/ui/components/Greeting";
+import { TPost } from "@/types";
 
-export default function Home({ posts }: { posts: any }) {
+export default function Home({ posts }: { posts: TPost[] }) {
   return (
     <div>
       <Head>
