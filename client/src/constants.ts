@@ -24,8 +24,14 @@ export const experiences = [
 
 export const projects = [
   {
+    name: "Window Snapper & Resizer",
+    description:
+      "Center and resize desktop windows on-the-fly with customizable shortcuts.",
+    linkHref: "https://github.com/Devail1/window-snapper-resizer",
+  },
+  {
     name: "Employee Hub",
-    description: "A Streamlined Employee Management App",
+    description: "A streamlined employee management web app.",
     linkHref: "https://github.com/Devail1/employee-hub",
   },
 ];
