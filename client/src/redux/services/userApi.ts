@@ -28,5 +28,3 @@ export const {
   useLoginUserMutation,
   util: { getRunningQueriesThunk },
 } = userApi;
-
-export const { getUserById } = userApi.endpoints;
