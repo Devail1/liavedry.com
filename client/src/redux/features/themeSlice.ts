@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "@/redux/store";
+import { getInitialTheme } from "@/utils";
 
 type Theme = "light" | "dark";
 
 const initialState: { value: Theme } = {
-  value: "light",
+  value: getInitialTheme(),
 };
 
 const themeSlice = createSlice({

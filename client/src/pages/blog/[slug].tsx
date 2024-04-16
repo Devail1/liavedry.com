@@ -10,7 +10,7 @@ import {
   getPostBySlug,
   getRunningQueriesThunk,
 } from "@/redux/services/postsApi";
-import formatDate from "@/utils";
+import { formatDate } from "@/utils";
 
 export default function BlogPostBySlug({
   source,

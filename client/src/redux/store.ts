@@ -4,13 +4,18 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { Persistor } from "redux-persist/es/types";
 import { createWrapper } from "next-redux-wrapper";
 import themeSlice from "@/redux/features/themeSlice";
+import authSlice from "@/redux/features/authSlice";
 import { postsApi } from "@/redux/services/postsApi";
+import { userApi } from "@/redux/services/userApi";
+import { isServer } from "@/utils";
 
 const isDev = process.env.NODE_ENV !== "production";
 
 const rootReducer = combineReducers({
   theme: themeSlice.reducer,
+  auth: authSlice.reducer,
   [postsApi.reducerPath]: postsApi.reducer,
+  [userApi.reducerPath]: userApi.reducer,
 });
 
 const makeConfiguredStore = (reducer: typeof rootReducer) =>
@@ -26,16 +31,14 @@ const makeConfiguredStore = (reducer: typeof rootReducer) =>
   });
 
 export const makeStore = () => {
-  const isServer = typeof window === "undefined";
-
-  if (isServer) {
+  if (isServer()) {
     return makeConfiguredStore(rootReducer);
   }
 
   const persistConfig = {
     key: "root",
     storage,
-    whitelist: ["theme"],
+    whitelist: ["theme", "auth"],
   };
 
   const persistedReducer = persistReducer(persistConfig, rootReducer);

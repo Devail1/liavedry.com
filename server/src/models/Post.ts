@@ -1,4 +1,4 @@
-import { Document, Schema, model } from 'mongoose';
+import { Document, Schema, model } from "mongoose";
 
 export interface IPost extends Document {
   title: string;
@@ -18,4 +18,4 @@ const PostSchema: Schema = new Schema({
   updatedAt: { type: Date, default: Date.now },
 });
 
-export const Post = model<IPost>('Post', PostSchema);
+export const Post = model<IPost>("Post", PostSchema);

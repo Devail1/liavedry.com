@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { TPost } from "@/types";
-import formatDate from "@/utils";
+import { formatDate } from "@/utils";
 
 function Posts({ posts }: { posts: TPost[] }) {
   return (

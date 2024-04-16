@@ -1,13 +1,40 @@
+import { loginSuccess } from "@/redux/features/authSlice";
+import { useLoginUserMutation } from "@/redux/services/userApi";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/navigation";
+import React, { FormEvent } from "react";
+import { useDispatch } from "react-redux";
 
 function LoginPage() {
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const [loginUser, { isLoading, isError }] = useLoginUserMutation();
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+    try {
+      const loginResponse = await loginUser({
+        email: data.email,
+        password: data.password,
+      });
+
+      if ("data" in loginResponse) {
+        dispatch(loginSuccess(loginResponse.data));
+      }
+      router.push("/");
+    } catch (error) {
+      console.error("Failed to log in:", error);
+    }
+  };
+
   return (
     <div className="min-h-layout container mx-auto flex flex-col items-center justify-center bg-base-100">
       <div className="w-96">
         <div className="rounded-lg bg-base-200 p-8 shadow-lg">
           <h2 className="mb-4 text-center text-2xl font-bold">Sign In</h2>
-          <form action="/login" method="post">
+          <form onSubmit={handleSubmit} method="post">
             <div className="mb-4 space-y-1">
               <label
                 htmlFor="email"
@@ -41,10 +68,19 @@ function LoginPage() {
               />
             </div>
             <div className="mb-4">
-              <button type="submit" className="btn btn-primary w-full">
+              <button
+                type="submit"
+                className="btn btn-primary w-full"
+                disabled={isLoading}
+              >
                 Sign In
               </button>
             </div>
+            {isError && (
+              <div className="text-red-500">
+                Failed to login user. Please try again.
+              </div>
+            )}
             <div className="text-center">
               <Link href="/auth/signup" className="text-sm text-base-content">
                 Don&apos;t have an account? Sign up

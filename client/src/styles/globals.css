@@ -8,7 +8,7 @@
 }
 /* Buttons */
 .btn-md {
-  @apply h-8 min-h-8;
+  @apply h-9 min-h-9;
 }
 
 .btn-circle {
