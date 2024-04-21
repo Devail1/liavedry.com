@@ -48,3 +48,57 @@
 [data-theme="light"] .warn-alert-text {
   @apply text-red-500;
 }
+
+/* MDX Editor */
+.mdxeditor-popup-container button:nth-child(1) {
+  @apply btn btn-primary btn-sm rounded-md border-none text-white;
+}
+
+.mdxeditor-popup-container button:nth-child(2) {
+  @apply btn btn-error btn-sm rounded-md border-none text-white;
+}
+
+.mdxeditor .cm-editor {
+  @apply !py-2;
+}
+
+.mdxeditor .cm-scroller {
+  padding-bottom: 4px !important;
+}
+
+.mdxeditor .prose code {
+  @apply !rounded-md !px-0.5;
+}
+
+.mdxeditor .prose code > span {
+  background-color: transparent;
+}
+
+.mdxeditor-toolbar {
+  scrollbar-width: none !important;
+}
+
+.mdxeditor-toolbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Custom Scrollbar */
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+  background-color: #d6dee1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}

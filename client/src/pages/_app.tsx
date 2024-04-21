@@ -1,6 +1,8 @@
 import type { AppProps } from "next/app";
-import "@/styles/globals.css";
+import "@mdxeditor/editor/style.css";
 import "@/styles/highlight/github-dark.css";
+import "@/styles/globals.css";
+
 import AppContainer from "@/ui/containers/AppContainer";
 
 export default function App({ Component, pageProps }: AppProps) {
