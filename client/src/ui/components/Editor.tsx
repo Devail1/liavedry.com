@@ -14,13 +14,13 @@ import { selectTheme } from "@/redux/features/themeSlice";
 import { useSelector } from "react-redux";
 import ToolbarContents from "./ToolbarContents";
 
-function Editor({ ref, markdown }) {
+function Editor({ ref, markdown, onChange }) {
   const theme = useSelector(selectTheme);
 
   return (
     <MDXEditor
       ref={ref}
-      onChange={console.log}
+      onChange={onChange}
       contentEditableClassName="prose"
       markdown={markdown}
       plugins={[

@@ -22,8 +22,8 @@ function LoginPage() {
 
       if ("data" in loginResponse) {
         dispatch(loginSuccess(loginResponse.data));
+        router.push("/");
       }
-      router.push("/");
     } catch (error) {
       console.error("Failed to log in:", error);
     }
@@ -77,7 +77,7 @@ function LoginPage() {
               </button>
             </div>
             {isError && (
-              <div className="text-red-500">
+              <div className="text-center text-red-500">
                 Failed to login user. Please try again.
               </div>
             )}

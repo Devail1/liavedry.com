@@ -21,25 +21,46 @@ const Editor = dynamic(() => import("@/ui/components/Editor"), { ssr: false });
 
 export default function BlogPostBySlug({
   markdownSource,
-  source,
+  mdxSource,
   title,
   date,
 }: {
   markdownSource: string;
-  source: MDXRemoteSerializeResult;
+  mdxSource: MDXRemoteSerializeResult;
   title: string;
   date: string;
 }) {
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  const [isEditMode, setIsEditMode] = useState(false);
+  const [currentMode, setCurrentMode] = useState<"edit" | "preview" | null>(
+    null
+  );
+  const [editedContent, setEditedContent] = useState(markdownSource);
+  const [source, setSource] = useState<MDXRemoteSerializeResult>(mdxSource);
   const ref = useRef<MDXEditorMethods>(null);
 
-  const handleEditClick = () => {
-    setIsEditMode(true);
+  const handleEdit = () => {
+    setCurrentMode("edit");
   };
 
-  const handleCancelClick = () => {
-    setIsEditMode(false);
+  const handleCancel = () => {
+    setEditedContent(markdownSource);
+    setCurrentMode(null);
+  };
+
+  const handlePreview = async () => {
+    setCurrentMode("preview");
+    const edited = await serialize(editedContent, {
+      mdxOptions: {
+        rehypePlugins: [rehypeHighlight as any],
+        development: process.env.NODE_ENV === "development",
+      },
+    });
+    setSource(edited);
+  };
+
+  const handleSave = () => {
+    console.log("editedContent", editedContent);
+    setCurrentMode(null);
   };
 
   return (
@@ -50,14 +71,20 @@ export default function BlogPostBySlug({
       <Suspense fallback={<>Loading...</>}>
         {isLoggedIn && (
           <PostActions
-            editorRef={ref}
-            isEditing={isEditMode}
-            onEdit={handleEditClick}
-            onCancel={handleCancelClick}
+            isEditing={currentMode === "edit"}
+            isPreviewing={currentMode === "preview"}
+            onSave={handleSave}
+            onEdit={handleEdit}
+            onCancel={handleCancel}
+            onPreview={handlePreview}
           />
         )}
-        {isEditMode ? (
-          <Editor ref={ref} markdown={markdownSource} />
+        {currentMode === "edit" ? (
+          <Editor
+            ref={ref}
+            markdown={editedContent}
+            onChange={setEditedContent}
+          />
         ) : (
           <article className="prose pb-8 lg:prose-xl prose-a:font-normal prose-a:text-blue-400 prose-img:my-0">
             <h1 className="prose !mb-0 text-2xl font-semibold md:text-3xl lg:text-4xl">
@@ -100,10 +127,12 @@ export const getStaticProps = wrapper.getStaticProps(
 
       const markdownSource = `# ${data?.title}\n\n${data?.content}`;
 
+      console.log("mdxSource", mdxSource);
+
       return {
         props: {
           markdownSource,
-          source: mdxSource,
+          mdxSource,
           date: formattedDate,
           title: data.title,
         },

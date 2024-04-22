@@ -1,22 +1,28 @@
 import React from "react";
 
-function PostActions({ isEditing, editorRef, onEdit, onCancel }: any) {
+function PostActions({
+  isEditing,
+  isPreviewing,
+  onEdit,
+  onSave,
+  onCancel,
+  onPreview,
+}: any) {
   return (
     <div className="mb-4">
-      {isEditing ? (
+      {isEditing || isPreviewing ? (
         <div className="flex gap-2">
           <button
             type="button"
+            onClick={onPreview}
+            disabled={isPreviewing}
             className="btn btn-success btn-sm mr-auto justify-start"
           >
             Preview
           </button>
           <button
             type="button"
-            onClick={() =>
-              editorRef.current?.getMarkdown() &&
-              console.log(editorRef.current.getMarkdown())
-            }
+            onClick={onSave}
             className="btn btn-primary btn-sm "
           >
             Save
@@ -26,7 +32,7 @@ function PostActions({ isEditing, editorRef, onEdit, onCancel }: any) {
             className="btn btn-error btn-sm "
             onClick={onCancel}
           >
-            Cancel
+            {`Cancel ${isEditing ? "Edit" : "Preview"}`}
           </button>
         </div>
       ) : (
