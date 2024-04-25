@@ -27,11 +27,11 @@ export const titleToSlug = (title: string) =>
     .replace(/--+/g, "-") // Replace consecutive hyphens with a single hyphen
     .trim(); // Trim any leading or trailing hyphens
 
-export const serializeMarkdown = (content: string) =>
+export const serializeMarkdown = (content: string, rehype?: boolean) =>
   serialize(content, {
     parseFrontmatter: true,
     mdxOptions: {
-      rehypePlugins: [rehypeHighlight as any],
+      rehypePlugins: rehype ? [rehypeHighlight as any] : [],
       development: process.env.NODE_ENV === "development",
     },
   });

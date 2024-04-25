@@ -7,7 +7,7 @@ import Projects from "@/ui/sections/Projects";
 import { experiences, projects } from "@/constants";
 import Greeting from "@/ui/components/Greeting";
 import { TPost } from "@/types";
-import { serialize } from "next-mdx-remote/serialize";
+import { serializeMarkdown } from "@/utils";
 
 export default function Home({ posts }: { posts: TPost[] }) {
   return (
@@ -40,9 +40,7 @@ export const getStaticProps = wrapper.getStaticProps((store) => async () => {
 
   const posts = await Promise.all(
     data?.map(async (post: TPost) => {
-      const mdxSource = await serialize(post?.content, {
-        parseFrontmatter: true,
-      });
+      const mdxSource = await serializeMarkdown(post?.content);
 
       return {
         ...post,

@@ -1,5 +1,3 @@
-import rehypeHighlight from "rehype-highlight";
-import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemoteSerializeResult } from "next-mdx-remote";
 import Head from "next/head";
 import { makeStore, wrapper } from "@/redux/store";
@@ -10,6 +8,7 @@ import {
 } from "@/redux/services/postsApi";
 import { TPost } from "@/types";
 import BlogView from "@/ui/components/BlogView";
+import { serializeMarkdown } from "@/utils";
 
 export default function BlogPostBySlug({
   mdxSource,
@@ -46,12 +45,7 @@ export const getStaticProps = wrapper.getStaticProps(
       const { data } = await store.dispatch(getPostBySlug.initiate(slug));
       await Promise.all(store.dispatch(getRunningQueriesThunk()));
 
-      const mdxSource = await serialize(data?.content, {
-        parseFrontmatter: true,
-        mdxOptions: {
-          rehypePlugins: [rehypeHighlight as any],
-        },
-      });
+      const mdxSource = await serializeMarkdown(data?.content, true);
 
       return {
         props: {

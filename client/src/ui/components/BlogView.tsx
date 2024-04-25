@@ -1,7 +1,7 @@
 import { selectIsLoggedIn } from "@/redux/features/authSlice";
 import { useUpdatePostMutation } from "@/redux/services/postsApi";
 import { TPost } from "@/types";
-import { formatDate, serializeMarkdown } from "@/utils";
+import { formatDate, serializeMarkdown, titleToSlug } from "@/utils";
 import { MDXEditorMethods } from "@mdxeditor/editor";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import React, { Suspense, useRef, useState } from "react";
@@ -34,7 +34,7 @@ function BlogView({
   };
 
   const updateSource = async (content: string) => {
-    const editedSource = await serializeMarkdown(content);
+    const editedSource = await serializeMarkdown(content, true);
     setSource(editedSource);
   };
 
@@ -60,6 +60,7 @@ function BlogView({
         data: {
           ...post,
           content: markdown,
+          slug: titleToSlug(source.frontmatter?.title as string),
         },
       });
 
