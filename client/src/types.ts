@@ -3,6 +3,7 @@ export type TPost = {
   slug: string;
   published: boolean;
   title: string;
+  content: string;
   createdAt: string;
 };
 

@@ -3,6 +3,7 @@ import {
   BoldItalicUnderlineToggles,
   CreateLink,
   InsertCodeBlock,
+  InsertFrontmatter,
   InsertImage,
   InsertThematicBreak,
   ListsToggle,
@@ -20,6 +21,7 @@ function ToolbarContents() {
       <ListsToggle />
       <InsertImage />
       <InsertCodeBlock />
+      <InsertFrontmatter />
       <CreateLink />
     </>
   );

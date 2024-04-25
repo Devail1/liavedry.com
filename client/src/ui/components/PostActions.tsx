@@ -3,6 +3,7 @@ import React from "react";
 function PostActions({
   isEditing,
   isPreviewing,
+  isLoading,
   onEdit,
   onSave,
   onCancel,
@@ -24,6 +25,7 @@ function PostActions({
             type="button"
             onClick={onSave}
             className="btn btn-primary btn-sm "
+            disabled={isLoading}
           >
             Save
           </button>

@@ -9,6 +9,7 @@ import {
   toolbarPlugin,
   imagePlugin,
   codeMirrorPlugin,
+  frontmatterPlugin,
 } from "@mdxeditor/editor";
 import { selectTheme } from "@/redux/features/themeSlice";
 import { useSelector } from "react-redux";
@@ -27,22 +28,23 @@ function Editor({ ref, markdown, onChange }) {
         codeBlockPlugin({ defaultCodeBlockLanguage: "" }),
         codeMirrorPlugin({
           codeBlockLanguages: {
-            html: "HTML",
-            bash: "Bash",
-            json: "JSON",
-            yaml: "YAML",
-            jsx: "JSX",
-            js: "JavaScript",
-            css: "CSS",
-            txt: "Plain Text",
-            tsx: "TypeScript",
-            "": "Unspecified",
+            javascript: "javascript",
+            html: "html",
+            bash: "bash",
+            json: "json",
+            yaml: "yaml",
+            jsx: "jsx",
+            css: "css",
+            txt: "txt",
+            tsx: "typeScript",
+            "": "unspecified",
           },
           theme,
         }),
         toolbarPlugin({
           toolbarContents: ToolbarContents,
         }),
+        frontmatterPlugin(),
         headingsPlugin(),
         listsPlugin(),
         linkPlugin(),

@@ -50,11 +50,14 @@
 }
 
 /* MDX Editor */
-.mdxeditor-popup-container button:nth-child(1) {
-  @apply btn btn-primary btn-sm rounded-md border-none text-white;
+.mdxeditor-popup-container tfoot td > button {
+  @apply btn btn-primary btn-sm mt-2 text-nowrap rounded-md border-none text-white;
+}
+.mdxeditor-popup-container div:last-child > button:nth-child(1) {
+  @apply btn  btn-primary btn-sm rounded-md border-none text-white;
 }
 
-.mdxeditor-popup-container button:nth-child(2) {
+.mdxeditor-popup-container div:last-child > button:nth-child(2) {
   @apply btn btn-error btn-sm rounded-md border-none text-white;
 }
 

@@ -9,13 +9,25 @@ export interface IPost extends Document {
   updatedAt: Date;
 }
 
-const PostSchema: Schema = new Schema({
-  title: { type: String, required: true },
-  slug: { type: String, required: true },
-  published: { type: Boolean, default: false },
-  content: { type: String, required: true },
-  createdAt: { type: Date, default: Date.now },
-  updatedAt: { type: Date, default: Date.now },
+const PostSchema: Schema = new Schema(
+  {
+    title: { type: String, required: true },
+    slug: { type: String, required: true },
+    published: { type: Boolean, default: false },
+    content: { type: String, required: true },
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now },
+  },
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+    },
+  }
+);
+
+PostSchema.virtual("id").get(function () {
+  return (this as any)?._id.toString();
 });
 
 export const Post = model<IPost>("Post", PostSchema);

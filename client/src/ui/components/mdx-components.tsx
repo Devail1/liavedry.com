@@ -4,6 +4,11 @@ import Alert from "@/ui/components/Alert";
 
 function useMDXComponents(components: TMDXComponents): TMDXComponents {
   return {
+    h1: ({ children }) => (
+      <h1 className="!text-2xl font-semibold md:!text-3xl lg:!text-4xl">
+        {children}
+      </h1>
+    ),
     h2: ({ children }) => (
       <h2 className="!text-xl font-semibold md:!text-2xl lg:!text-3xl">
         {children}
