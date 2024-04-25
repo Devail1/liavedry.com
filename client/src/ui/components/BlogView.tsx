@@ -33,31 +33,24 @@ function BlogView({
     setEditMode("edit");
   };
 
-  const updateSource = async () => {
-    const editedSource = await serializeMarkdown(markdown);
+  const updateSource = async (content: string) => {
+    const editedSource = await serializeMarkdown(content);
     setSource(editedSource);
   };
 
   const handleCancel = () => {
-    switch (editMode) {
-      case "preview": {
-        setEditMode("edit");
-        break;
-      }
-      case "edit": {
-        setMarkdown(post?.content);
-        setEditMode(null);
-        break;
-      }
-      default: {
-        setEditMode(null);
-      }
+    if (editMode === "edit") {
+      setMarkdown(post?.content);
+      updateSource(post?.content);
+      setEditMode(null);
+    } else if (editMode === "preview") {
+      setEditMode("edit");
     }
   };
 
   const handlePreview = () => {
     setEditMode("preview");
-    updateSource();
+    updateSource(markdown);
   };
 
   const handleSave = () => {
@@ -71,7 +64,7 @@ function BlogView({
       });
 
       if (!updateError) {
-        updateSource();
+        updateSource(markdown);
         setEditMode(null);
       }
     } catch (error) {
